@@ -1,0 +1,124 @@
+<div class="content w1200 layout">
+      <hr />
+                <div class="mb50 layout">
+                    <div class="fl w1200 gdl_con">
+                        <div class="layout">
+                            <h2>华人资讯</h2>
+                            <div class="fl gdl_tab ">
+                                <ul id="group_li">
+                                    <li class="cur" item="1"><a href="javascript:void(0);">医疗信息</a><i class="line">｜</i></li>
+                                    <li item="2"><a href="javascript:void(0);">名医文章</a><i class="line">｜</i></li>
+                                    <li item="3"><a href="javascript:void(0);">典型病例</a><i class="line">｜</i></li>
+                                </ul>
+                            </div>
+                            <a href="/articles/medicalinfo" class="fr more ">
+                                <span>进入华人资讯</span>
+                                <i class="more_i g_icon"></i>
+                            </a>
+                        </div>
+                        <div class="layout com_list">
+                            <ul id="forum_list">
+                             <% @docs.each do |doc| %>
+                               <li>
+                               <i class="dot">◆</i>
+                               <p class="word_hid">
+                                <a href="/articles/show?url=<%=doc["url"].gsub(/&/,'~')%>&author=<%=URI::escape(doc["author"])%>&title=<%=URI::escape(doc["title"])%>&infotype=1&aricle_date=<%=URI::escape(doc["aricle_date"])%>" class="fs14" title="<%=doc["title"]%>"><%=doc["title"]%></a>
+                               </p><span class="fr gray_2 word_hid " title="">
+                                <i class="g_icon male"></i>"<%=doc["author"]%></span>
+                                </li>
+                              <% end %>
+                           </ul>
+                           <ul id="forum_list2" style="display:none">
+                           </ul>
+                           <ul id="forum_list3" style="display:none">
+                           </ul>
+                        </div>
+                    </div>
+                    <div class="fr w280">
+                    </div>
+                </div>
+            </div>
+<% content_for :template_js do %>
+<script>
+    $("#group_li li").click(function() {
+        $("#group_li li").removeClass("cur");
+        $(this).addClass("cur");
+        cno = $(this).attr('item');
+        if(cno==1){
+          $("#forum_list").show();
+          $("#forum_list2").hide();
+          $("#forum_list3").hide();
+          
+        }else if (cno==2){
+          $("#forum_list").hide();
+          $("#forum_list2").show();
+          $("#forum_list3").hide();
+        }else{
+          $("#forum_list").hide();
+          $("#forum_list2").hide();
+          $("#forum_list3").show();
+        }
+        //forumList(cno);
+    });
+    forumList(1);
+    //forumList(2);
+    //forumList(3);
+    function forumList(cno) {
+    type=cno
+    url = JYUrl('ajax', 'getForumByCategory'),
+    $.post(url, {
+        cid: cno,
+        num: 14
+    },
+    function(result) {
+        html = '';
+        var num=0;
+        $.each(result,
+        function(i, doc) {
+            var url = JYUrl("forum", "detail", {
+                id: doc.forum_id
+            });
+            if (num >13){
+                return ;
+            }
+            num++;
+            html += '<li><i class="dot">◆</i>';
+            html += '<p class="word_hid"><a href="/articles/show?url=' + encodeURIComponent(doc.url).replace(/&/,"~")+"&author="+encodeURIComponent(doc.author)+"&title="+encodeURIComponent(doc.title) +"&infotype="+type+"&aricle_date="+encodeURIComponent(doc.aricle_date) + '" class="fs14" title="' + doc.title + '">' + doc.title + '</a></p>';
+            html += '<span class="fr gray_2 word_hid " title="' + doc.author + '">';
+            if (doc.sex) {
+                html += '<i class="g_icon female"></i>';
+            } else {
+                html += '<i class="g_icon male"></i>';
+            }
+            html += doc.author + '</span></li>';
+        });
+        if(type==2){
+           $("#forum_list2").html(html);
+         }else if (type==3){
+              $("#forum_list3").html(html);
+         }else if (type=1){
+              $("#forum_list").html(html);
+         }
+         
+        //$("#forum_list").html(html);
+    },
+    'json');
+    
+
+function formSubmit()
+  {   var name=$("#login").value;
+      var url=JYUrl('check', 'name');
+    $.post(url, {
+              type: 3,
+	      username:name,
+	      password:password
+    },
+    function(result) {
+        document.getElementById("loginFrom").submit()
+    },
+    'json');
+  }
+    
+}
+  </script>
+<% end %>

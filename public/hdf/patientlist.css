@@ -1,0 +1,366 @@
+.cjtz_con_box *{font-family: "\5FAE\8F6F\96C5\9ED1" !important;}
+.cjtz_con{ width: 1000px; margin: 0 auto; border: 1px solid #d1d1d1;}
+.cjtz_con .left_bar{ float: left; width: 188px; border-right: 1px solid #d1d1d1; background: #f3f3f3; margin-bottom: -1px; overflow: hidden; font-size: 14px;}
+.cjtz_con .left_bar h3{ height: 40px; color: #000; border-bottom: 1px solid #d1d1d1; background: url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat;}
+.cjtz_con .left_bar h3 .o{ line-height: 40px; cursor: pointer; border-top: 1px solid #FFF; padding-left: 50px; background: url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat right -120px;}
+.cjtz_con .left_bar h3.on .o{ background-position: right -160px;}
+.cjtz_con .left_bar .tit_visit{ background-position: 0 0;}
+.cjtz_con .left_bar .tit_manage{ background-position: 0 -40px;}
+.cjtz_con .left_bar .tit_friends{ background-position: 0 -80px;}
+.cjtz_con .left_bar a{ color: #000; display: block; line-height: 40px;}
+.cjtz_con .left_bar a:hover{ color: #FFF; background: #F90;}
+.cjtz_con .left_bar ul{ overflow: hidden; border-bottom: 1px solid #d1d1d1;}
+.cjtz_con .left_bar ul li.on a{ color: #FFF; background: #F70;}
+.cjtz_con .left_bar ul li .s,.cjtz_con .left_bar ul li a{ padding-left: 50px; height: 40px; line-height: 40px; cursor: pointer;}
+.cjtz_con .left_bar ul li .s{ background: url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat right -200px;}
+.cjtz_con .left_bar ul li .s.on{ background-position: right -240px;}
+.cjtz_con .left_bar ul li ul{ overflow: hidden; border-bottom: none;}
+.cjtz_con .left_bar ul li ul li{ height: 40px; line-height: 40px;}
+.cjtz_con .left_bar ul li ul li a{ padding-left: 70px;}
+.dialogbox{ width: 480px;}
+.greenbtn_1{ display: inline-block; width: 180px; height: 32px; line-height: 32px; text-align: center; color: #FFF; background: #6bc30d; border-radius: 5px; font-size: 14px;}
+.greenbtn_1:hover{ color: #FFF; background: #5bad03;}
+.bluebtn_1{ display: inline-block; width: 180px; height: 32px; line-height: 32px; text-align: center; color: #000; background: #d2d2d2; border-radius: 5px; font-size: 14px;}
+.bluebtn_1:hover{ color: #000; background: #bcbcbc;}
+
+.cjtz_searchlist{ width: 630px; margin: 10px auto; position: relative;z-index: 0;}
+.cjtz_right_btn{ background: #f90; border-radius: 5px; padding: 10px; color: #FFF; position: absolute; z-index: 0; right: -150px; top: 0; font-size: 14px;}
+.cjtz_right_btn:hover{ background: #f70; color: #FFF;}
+
+
+
+
+
+
+
+
+
+/*reset old voice play style*/
+.yy_vioce_box { color: #2aa1ff; cursor: pointer; font-size: 16px; height: 44px;line-height: 44px; padding: 20px;}
+.yy_voice_pic {background:url(http://i1.hdfimg.com/zixun/v1.png) no-repeat left center;display: block;float: left;height: 44px;margin-right: 20px;width: 175px;}
+.yy_voice_pic.on {background:url(http://i1.hdfimg.com/zixun/v1.gif) no-repeat left center;}
+/*ZX-V2*/
+.cjtz_con .right_con1{margin-left: 0px; _width: 802px;width: 1000px;overflow:hidden;}
+.cjtz_con .right_con table td {font-size: 14px;padding: 10px 18px;}
+.cjtz_con .right_con a:hover{ color: #1159bb; text-decoration: underline;}
+.patient_tit2{font-size: 18px; font-weight: 700; padding: 20px 35px;}
+.cjtz_con .right_con .allcase_list{ margin: 0 35px;}
+.a_blank{ color: #000;}
+.a_blank:hover{ color: #2670d5;}
+.cjtz_con .right_con .hzgl_box{ background:#fff; overflow:hidden;}
+.cjtz_con .right_con .hzgl_box .hui_r{ width:560px; overflow:hidden; float:left; padding:20px 0 0 10px;}
+.cjtz_con .right_con .hzgl_box .hui_r .fs.f14.lh180.clearfix{}
+.cjtz_con .right_con .hzgl_box .hui_r .fs.f14.lh180.clearfix p.fr{  float:left;}
+.cjtz_con .right_con .hzgl_box .hui_r .hui_con{ width:100%;}
+.cjtz_con .right_con .hzgl_box .hui_r .hui_con table td{ font-size: 12px;}
+.cjtz_con .right_con .hzgl_box .hui_l{ float:right; width:230px; border-left:1px solid #d1d1d1; border-bottom:1px solid #d1d1d1;}
+.creat_note_a {border: 1px solid #F70;border-radius: 3px;color: #FFF; background: #f70;}
+.creat_note { background:url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat -12px -286px;float: left;height: 25px;width: 25px;}
+.creat_title {background-color: #f70;border-left: 1px solid #F70;float: left;height: 25px;padding: 0 5px 0 0; font-weight: bold;}
+.creat_note_a:hover{ background: #f60;}
+.creat_note_a:hover .creat_title{ color: #FFF; background: #f60; border-left: 1px solid #F60;}
+.creat_note_news{ display: inline-block; width: 36px; height: 16px; background:url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat -7px -331px; position: relative; z-index: 0; top: -10px; left: -5px;}
+.cjtz_con .right_con .group_name{ width: 140px;}
+.cjtz_con .right_con .group_op{ width: 90px;}
+.go_cjtz{cursor: pointer;display: block;right: 20px;position: absolute;top: -1px;}
+.visited_superman{ position: relative; z-index: 0;}
+.right_hdf_superman{ position: absolute; width: 86px; height: 151px; top:-97px; right: 10px;}
+.visited_note_btn{ display: block; height: 36px; line-height: 36px; background: #1e96f2; color: #FFF; font-weight: bold; width: 120px; text-align: center; border-radius: 5px; font-size: 16px; position: absolute; left: -120px; top: 40px;}
+.visited_note_btn:hover{ background: #007ad7; color: #FFF;}
+.visited_note_news{ display: block; width: 36px; height: 16px; background:url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat -6px -372px; z-index: 0; top: -10px; left: -5px; position: absolute; left: -160px; top: 50px;}
+.export_1{ display: inline-block; padding-right: 10px; padding-left: 30px; height: 22px; line-height: 22px; border: 1px solid #ccc; background: #fcfcfc url(http://i1.hdfimg.com/doctorzone/images/left_bg.png) no-repeat -10px -408px; border-radius: 3px; color: #000;}
+.export_1:hover{ color: #000; text-decoration: none; background-color: #eee;}
+.cjtz_con .right_con .export_1:hover{ color: #000; text-decoration: none; background-color: #eee;}
+
+.slide_tit1{ height: 40px; line-height: 40px; border: 1px solid #ccc; border-bottom: none;}
+.slide_tit1 ul{ overflow: hidden;}
+.slide_tit1 ul li{ float: left; border-right: 1px solid #ccc; font-size: 14px;}
+.slide_tit1 ul .on{ background: #2a9dff !important; background-image:none !important;}
+.slide_tit1 ul li.on a{ color: #FFF;}
+.slide_tit1 ul li a{ color: #000; display: block; padding: 0 10px;}
+.slide_tit1 ul li a:hover{ color: #000; text-decoration: none; color: #000;}
+.cjtz_con .right_con .slide_tit1 ul li a{ color: #000; display: block; padding: 0 10px;}
+.cjtz_con .right_con .slide_tit1 ul li a:hover{ color: #000; text-decoration: none; color: #000;}
+.slide_tit1 ul li.on{ background: #2a9dff;}
+.slide_tit1 ul li.on a{ color: #FFF;}
+.slide_tit1 ul li.on a:hover{ color: #FFF;}
+.cjtz_con .right_con .slide_tit1 ul li.on a{ color: #FFF;}
+.cjtz_con .right_con .slide_tit1 ul li.on a:hover{ color: #FFF;}
+.cjtz_tit2{ font-size: 18px; color: #262626; font-weight: bold; height: 50px; line-height: 50px;}
+.btn_gray1{ font-size: 14px; color: #262626; font-weight: normal; height: 20px; line-height: 20px; display: inline-block; border: 1px solid #ccc; background: #fcfcfc; border-radius: 3px; padding: 0 10px;}
+.btn_gray1:hover{ color: #000; text-decoration: none; background-color: #eee;}
+.cjtz_con .right_con .btn_gray1:hover{ color: #000; text-decoration: none; background-color: #eee;}
+.slide_con1{}
+/*zzx*/
+.containers{width: 1002px; margin: 0 auto;}
+.mywraps .lbh{ border-left: 4px solid #ff7700; padding-left: 10px;}
+.mywraps .ln1{line-height: 1;}
+.mywraps .f24{font-size: 24px;}
+.mywraps .c33{color: #333;}
+.mywraps .c66{color: #666;}
+.mywraps .cf6{color: #ff6600;}
+.mywraps .bgf8f8{background-color: #f8f8f8;}
+.mywraps .bdcdc{border: 1px solid #dcdcdc;}
+.mywraps .bdf8f8{border: 1px solid #bfbfbf;}
+.mywraps .h35{height: 35px;}
+.mywraps .h200{height: 200px;}
+.mywraps .w90{width: 90px;}
+.mywraps .w88{width: 88px;}
+.mywraps .mla{margin-left: auto;}
+.mywraps .mra{margin-right: auto;}
+.mywraps .ckovh{overflow: hidden; height: 86px;}
+.mywraps .mains{width: 920px; border: 1px solid #d1d1d1; padding: 0 40px;}
+.mywraps .stitle{height: 70px; line-height: 70px;}
+.mywraps .sinput{width: 260px;}
+.mywraps .filePic{overflow:hidden;height:auto;}
+.mywraps .filePic a:hover,.pens:hover,.puls:hover{ color: #2670d5;}
+.mywraps .sarea{display: block; resize: none; width: 80%; padding: 10px; font-size: 14px;}
+.mywraps .uppics{width: 100px; height: 28px; line-height: 28px; cursor: pointer;margin-bottom: 60px;}
+.mywraps .uppics img{border-right: 1px solid #F8F8F8; color: #000;}
+.mywraps .btn{ border: 1px solid #31a828; background-color: #36cb2b; border-radius: 4px; height: 40px;color: #F8F8F8; line-height: 40px;}
+.mywraps .btn_norm{width: 178px;}
+.mywraps .btn:hover{background: #36b12d;text-decoration: none;color: #fff;border: 1px solid #31a828;}
+.mywraps .pens{ background: url(http://i1.hdfimg.com/doctorzone/images/pen.png) no-repeat left center; padding-left: 12px;}
+.mywraps .puls{ background: url(http://i1.hdfimg.com/doctorzone/images/puls.png) no-repeat left center; padding-left: 12px;}
+.mywraps .sgoups,.sgoups2{position: relative; margin-left: 80px; margin-top: 10px;line-height: 43px;}
+.mywraps .sgoups{width: 738px;}
+.mywraps .checks{ display: block; height: 20px; line-height: 20px; font-size: 14px; margin-right: 30px; overflow: hidden; margin-bottom:14px; _width:160px;_margin-right:10px;}
+.mywraps .chk,.chkall{float:left; display: inline; width: 16px; height: 16px; border: 1px solid #bfbfbf; margin-right: 7px;}
+.mywraps .chk_uncheck{float:left; display: inline; width: 16px; height: 16px; border: 1px solid #bfbfbf; margin-right: 7px;background:#cfcfcf; margin-top:6px;}
+.mywraps .checks .on{background: url(http://i1.hdfimg.com/doctorzone/images/right.png) no-repeat center;}
+.mywraps .ck_title{float: left; font-size: 14px; padding-top: 10px; padding-left: 10px;}
+.mywraps .sgoups2{height: auto;}
+.mywraps .dropbtn{position: absolute; right: -30px; bottom: 5px; display: inline-block; background: url(http://i1.hdfimg.com/doctorzone/images/arrow.png) no-repeat right center; padding-right: 15px;}
+
+/*zzxv2*/
+.zzx_cons{margin-left: 189px;}
+.zzx__tab_title{height: 36px;overflow: hidden;margin-top: -1px; float: left;}
+.zzx__tab_title li{ float: left;overflow: hidden;}
+.zzx__tab_title li a{display:block;_display: inline-block; color: #000000; height: 34px; line-height: 34px; border-right:1px solid #d1d1d1; border-top:1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1; font-size: 14px; padding: 0 20px; background-color: #fafafa;overflow: hidden;}
+.zzx__tab_title li.zzx_cur a{ background-color: #FFFFFF; border-bottom: none; border-top: 3px solid #ff7700; }
+.right_las{height: 34px; line-height: 34px; background-color: #fafafa;border-bottom: 1px solid #d1d1d1;}
+.right_las a{ display: inline; border-right: none; border-bottom: none; background:#ff7700 url(http://i1.hdfimg.com/doctorzone/images/shizi.png) no-repeat 9px center; padding: 4px 11px 4px 32px; color: #fff; font-size: 14px; border-radius: 3px; margin-left: 20px; margin-right: 5px;}
+
+.zzx_sf{ padding: 38px 27px 0;}
+.zzx_sf a{color:#2670d5;}
+.zzx_sf a:hover{ text-decoration: underline;}
+.zzx_stable{ width: 100%;_width: 99%; border-collapse: collapse;}
+.zzx_stable .zzx_ftr{ border: 1px solid #d3d3d3;}
+.zzx_stable th{  position: relative; background-color: #f9f9f9; height: 35px; line-height: 35px; text-align: center;}
+.zzx_stable td{ position: relative; font-size: 12px; color: #000000; text-indent: 5px; border-bottom: 1px dotted #d3d3d3; padding-bottom: 10px;}
+.zzx_sf .zzx_gaiyao{ position: relative; color: #000000;display: block;height: 30px;line-height: 30px; cursor: pointer;}
+.zzx_sf .zzx_gaiyao:hover{ color:#2670d5;text-decoration: none;}
+.zzx_gaiyao_tips,.zzx_zhixing_tips{ display: none; position: absolute; width: 230px; height: 175px; padding: 15px; border: 1px solid #bebebe; top: 50px; left:50%; margin-left:-130px; background-color: #FFFFFF;z-index: 99; zoom: 1;}
+.zzx_uarrow{ position: absolute; width: 262px; height: 10px; background: url(http://i1.hdfimg.com/doctorzone/images/up_arrows.png) no-repeat center; top: -10px; left: 0;}
+.zzx_gaiyao h3{color: #2670d5; height: 18px; line-height: 1; margin-bottom: 10px;overflow: hidden; text-indent: 0;}
+.zzx_gaiyao p{ font-size: 12px; color: #333333;_height: 40px; line-height: 1.8em; text-indent: 0; margin-bottom: 10px;}
+.zzx_gaiyao ul{ height: 50px; width: 230px; overflow: hidden;}
+.zzx_gaiyao ul li{width: 50px; height: 50px; float: left; margin-right: 10px; overflow:hidden;}
+.zzx_gaiyao ul li img{display: block; max-width:100%; max-height:100%; _width:100%; _height:100%;}
+.zzx_zhixing{ position: relative; text-indent: 0;color: #2670d5; cursor: pointer;}
+.zzx_zhixing.on .zzx_zhixing_tips{ display: block;}
+.zzx_zhixing_tips{top: 28px; height: 255px;}
+.zzx_stable .zzx_show{display: block;}
+.zzx_zhixing_tips h4{ line-height: 1; padding: 10px 0;}
+.zzx_zhixing_tips p{color: #333; font-size: 12px; line-height: 1.5em; height:200px; overflow:auto; text-align:left;}
+.zzx_zhixing_tips .zzx_pages{position: absolute; bottom: 0; height: 25px; line-height: 25px; background-color: #edf5ff;left: 0;width: 260px; text-align: center;}
+.zzx_pages a{ padding: 4px; color: #333;}
+.zzx_pages a.on{color: #2670d5;}
+.zzx_prv{background: url(http://i1.hdfimg.com/doctorzone/images/zzx_prv.png) no-repeat center;margin-right: 4px;}
+.zzx_next{ background: url(http://i1.hdfimg.com/doctorzone/images/zzx_next.png) no-repeat center;}
+.zzx_prv_on {background: url(http://i1.hdfimg.com/doctorzone/images/zzx_prv_on.png) no-repeat center;margin-right: 4px;}
+.zzx_next_on{background: url(http://i1.hdfimg.com/doctorzone/images/zzx_next_on.png) no-repeat center;}
+
+.yy_vioce_box2 { color: #2aa1ff; cursor: pointer; font-size: 16px; height: 30px;line-height: 30px; padding: 10px 0;}
+.yy_voice_pic2 {background:url(http://i1.hdfimg.com/zixun/v1.png) no-repeat left center;display: block;float: left;height: 30px;margin-right: 10px;width: 60px;border-radius: 5px;}
+.yy_voice_pic2.on {background:url(http://i1.hdfimg.com/zixun/v1.gif) no-repeat left center;}
+
+
+.sf_h2{font-size: 14px; color: #000; height: 50px; line-height: 50px; border-bottom: 1px solid #dcdcdc;}
+.sf_h2 strong{display: inline-block; border-right: 1px solid #dcdcdc;height: 50px; line-height: 50px; padding: 0 15px; margin-right: 15px;}
+
+.zzx_sf_con{position:relative;margin: 18px; height:123px; overflow: hidden;zoom:1;}
+.tz_titles{width: 80px; float: left; font-size: 14px; font-weight: bold; line-height: 1.5em;zoom:1;}
+.tz_cons{ margin-left: 80px; margin-bottom: 13px;zoom:1;}
+.tz_cons_p{ line-height: 1.5em;font-size: 14px;}
+.tz_cons_audios{padding: 1px 0;} 
+.tz_cons_pics{zoom:1;}
+.tz_cons_pics .picitem{ height:50px;width:50px; float: left; margin-right: 10px; margin-bottom: 10px; display: inline;overflow:hidden;zoom:1;}
+.tz_cons_pics .picitem img{width:50px;}
+.zzx_sj_shows{position: relative; padding: 12px 6px; border-bottom: 1px solid #DCDCDC;}
+.zzx_sj_left{ height: 305px; border: 2px solid #fff; float: left;overflow: hidden; cursor: pointer; width:400px;}
+.zzx_sj_right{position:relative;float: left; width: 386px; height: 305px; left:0; cursor: pointer; border:2px solid #FFF;}
+.left_slider_shows{display:none;position: absolute;top: -2px;left: 0;width:382px;height: 305px;border: 2px solid #a6bedf;}
+
+.zzx_sj_shows .ons{ border-color:#eb6100 ;}
+.zzx_tz_basr{ height: 22px; position: relative; border-top:1px solid #DCDCDC;}
+.zzx_sf_more{position: absolute;border-top: 1px solid #fff; top: -1px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; left: 50%; margin-left: -33px; width: 66px; height: 22px; border: 1px solid #DCDCDC; background: url(http://i1.hdfimg.com/doctorzone/images/arrow.png) no-repeat 17px center; color: #2670d5; line-height: 22px; text-indent: 30px; cursor: pointer;border-top: 1px solid #fff;}
+.zzx_tz_basr .outos{ background-image: url(http://i1.hdfimg.com/doctorzone/images/arrowd.png);}
+
+.lxhz_tbs{width: 100%; border-collapse: collapse;}
+.lxhz_tbs td{}
+.cjtz_con .right_con .lxhz_tbs td{padding: 0; text-align: center; font-size: 14px; color: #010000; font-weight: bold;}
+.lxhz_tbs table{width: 100%;}
+.slide_box .lxhz_tbs ul li{width: 191px;}
+.slide_box .slide_tit1{line-height: 2em;}
+.zzx_bd{position: relative; width: 100%; height: 48px;}
+.zzx_bd .prev1{ position: absolute; width: 23px; height: 48px; left: 0; top: 0; background: url(http://i1.hdfimg.com/doctorzone/images/left2.png) no-repeat center;z-index: 999;cursor: pointer;}
+.zzx_bd .prev1:hover{ background-image: url(http://i1.hdfimg.com/doctorzone/images/left1.png);}
+.zzx_bd .next1{ position: absolute; width: 23px; height: 48px; right: 0; top: 0;background: url(http://i1.hdfimg.com/doctorzone/images/right2.png) no-repeat center;z-index: 999;cursor: pointer;}
+.zzx_bd .next1:hover{ background-image: url(http://i1.hdfimg.com/doctorzone/images/right1.png);}
+
+.zzx_fancy_pops{ position: relative; height: 50px; padding-right: 50px;overflow: hidden;}
+.pops_small_pic img{width: 50px; height: 50px; border: none; margin-right: 5px;}
+.pops_mores{position: absolute; right: 0; bottom: 0; width: 50px; height: 22px; background: url(http://i1.hdfimg.com/doctorzone/images/pops_downs.jpg) no-repeat right center;}
+.pops_small_audio .yy_voice_pic{ background-position-x:-6px ;}
+.lxhz_tbs td.qiehuan_tabs{cursor: pointer;}
+.lxhz_tbs td.qiehuan_tabs a{color: #000000; text-decoration: none;}
+.lxhz_tbs td.qiehuan_tabs a:hover{text-decoration: none; color: #000;}
+.lxhz_tbs td.on a:hover{text-decoration: none; color: #FFFFFF;}
+.lxhz_tbs .on{ background-color: #2a9dff !important;background-image:none !important;}
+.lxhz_tbs td.on a{color: #FFFFFF;}
+
+/*2014-12-9*/
+.sf_hzgl_title{ font-size: 18px; font-weight: bold; line-height: 54px; text-align: center;}
+.cjtz_con .right_con .f12_table table td{ font-size: 12px; padding: 10px 5px;}
+.cjtz_con .right_con .f12_table table th{ font-size: 12px; padding: 10px 0;}
+.padding_table table td{ padding: 10px 5px;}
+.padding_table table th{ padding: 10px 5px;}
+
+
+.name_ico_red_bor{ line-height: 1; color: #F30; background: #FFF; border: 1px solid #f30; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+.name_ico_blue_bor{ line-height: 1; color: #137cf2; background: #FFF; border: 1px solid #137cf2; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+.name_ico_green_bor{ line-height: 1; color: #094; background: #FFF; border: 1px solid #094; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+.name_ico_red_bac{ line-height: 1; color: #FFF; background: #F30; border: 1px solid #f30; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+.name_ico_blue_bac{ line-height: 1; color: #FFF; background: #137cf2; border: 1px solid #137cf2; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+.name_ico_green_bac{ line-height: 1; color: #FFF; background: #094; border: 1px solid #094; border-radius: 3px; padding:3px 5px; display: inline-block;cursor:auto;}
+
+
+.name_ico_red_bor:hover{ color: #F30 !important; text-decoration: none !important;}
+.name_ico_blue_bor:hover{ color: #137cf2 !important; text-decoration: none !important;}
+.name_ico_green_bor:hover{ color: #094 !important; text-decoration: none !important;}
+.name_ico_red_bac:hover{ color: #FFF !important; text-decoration: none !important;}
+.name_ico_blue_bac:hover{ color: #FFF !important; text-decoration: none !important;}
+.name_ico_green_bac:hover{ color: #FFF !important; text-decoration: none !important;}
+
+
+
+
+.group_red{ color: #F00;}
+.group_red:hover{ color: #F00;}
+.cjtz_con .right_con .group_red:hover{ color: #F00;}
+.link_blue{ padding: 0 5px; color: #137cf2;}
+.link_blue:hover{ color: #137cf2;}
+.link_gray{ padding: 0 5px; color: #CCC;}
+.link_gray:hover{ color: #CCC; text-decoration: none; cursor: auto;}
+.cjtz_con .right_con .link_gray:hover{ color: #CCC; text-decoration: none; cursor: auto;}
+
+.sf_hzgl_group_name{ color: #000; font-size: 14px; font-weight: bold;}
+.sf_hzgl_group_hd{ height: 45px; line-height: 45px; font-size: 14px; border-bottom: 2px solid #e6e6e6; margin-bottom: 20px;}
+.sf_hzgl_group_hd li{ float: left; position: relative; z-index: 0; bottom: 0; border-bottom: 2px solid #e6e6e6;}
+.sf_hzgl_group_hd li a{ color: #000;}
+.sf_hzgl_group_hd li a:hover{ color: #000; text-decoration: none;}
+.cjtz_con .right_con .sf_hzgl_group_hd li a:hover{ color: #000; text-decoration: none;}
+.sf_hzgl_group_hd .line{color: #b7b7b7;}
+.sf_hzgl_group_hd .titcell{ padding:0 30px; cursor: pointer; font-size: 14px; font-weight: bold;}
+.sf_hzgl_group_hd .titcellon{ border-bottom: 2px solid #f60; color: #f40;}
+.sf_hzgl_group_hd .titcellon a{ color: #f40;}
+.cjtz_con .right_con .sf_hzgl_group_hd .titcellon a:hover{ color: #f40;}
+.cjtz_con .right_con .sf_hzgl_group_hd .titcellon a:hover{ color: #f40;}
+.zzx_sf3{padding: 0 27px 0;}
+.sf_headers{ font-size: 18px; text-align: center; color: #000000; line-height: 60px;}
+.zzx_stable3{ width: 100%;_width: 99%; border-collapse: collapse;}
+.sf3_tr{ border: 1px solid #d3d3d3;}
+.zzx_stable3 th{  position: relative; background-color: #f9f9f9; height: 35px; line-height: 35px; text-align: left;}
+.zzx_stable3 td{ position: relative; font-size: 12px; color: #000000; text-indent: 1em; border-bottom: 1px dotted #d3d3d3; line-height: 40px;}
+.sf_btns_group{ margin-bottom: 20px; height: 40px; overflow: hidden;}
+.sf_btns{float: left;display: inline; width: 150px; height: 38px; line-height: 38px; border: 1px solid #98d4ff; border-radius: 3px; margin-right: 20px; font-size: 18px; color: #000000; text-indent: 60px;}
+.sf_btns:hover{ text-decoration: none; color: #000;}
+.cjtz_con .right_con .sf_btns:hover{ text-decoration: none; color: #000;}
+.sf_fxs{ background: #D6EEFF url(http://i1.hdfimg.com/doctorzone/images/fx.png) no-repeat 20px center;}
+.sf_qfs{ background: #D6EEFF url(http://i1.hdfimg.com/doctorzone/images/qf.png) no-repeat 20px center;}
+.sf_zsfs{ background: #D6EEFF url(http://i1.hdfimg.com/doctorzone/images/sf.png) no-repeat 20px center;}
+.sf_fxs:hover{ color: #000;}
+.sf_qfs:hover{ color: #000;}
+.sf_zsfs:hover{ color: #000;}
+.cjtz_con .right_con .sf_fxs:hover{ color: #000;}
+.cjtz_con .right_con .sf_qfs:hover{ color: #000;}
+.cjtz_con .right_con .sf_zsfs:hover{ color: #000;}
+.sf_fxs_on:hover{ color: #FFF;}
+.sf_qfs_on:hover{ color: #FFF;}
+.sf_zsfs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_fxs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_qfs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_zsfs_on:hover{ color: #FFF;}
+.sf3_ps{ float: right; font-size: 12px; color: #137cf2; padding-left: 25px; background: url(http://i1.hdfimg.com/doctorzone/images/sfps.png) no-repeat left center;margin-top: 23px;}
+.sf3_edit_txt{color: #000;}
+.sf3_edit_eds,.sf3_edit_error{ padding-left: 12px;}
+.sf3_cheks{float: left; width: 20px; height: 40px; line-height: 40px;}
+.sf3_cheks input{display: none; position: relative; top: 3px;}
+.sf3_edit_inputs{display: none; width: 160px;height: 24px;border: 1px solid #d3d3d3;line-height: 24px;padding-left: 3px;}
+.sf3_check_all{display: none;}
+.sf3_checkgroup{display: none; padding-bottom: 30px;}
+.sf3_checkgroup textarea{border: 1px solid #d1d1d1; display: block; width: 745px; height: 130px; resize: none; padding: 5px;} 
+.sf3_checkgroup .check_a {height: 36px; background: #f5f6f6; border: 1px solid #d1d1d1; border-top: none; }
+.sf3_checkgroup .check_a .editor_btn_1 {background: 0 0; border: none; padding: 0; border-radius: 0; height: 36px; line-height: 36px; padding-left: 20px; }
+
+.sf3_checkgroup .check_a .editor_btn_1 .icon {display: block; position: relative; float: left; width: 25px; height: 25px; background: url(http://i1.hdfimg.com/doctorzone/images/img_bg.png) no-repeat; }
+.sf3_checkgroup .check_a .editor_btn_1 .icon_check_a {background-position: 0 -175px; top: 6px; margin-right: 10px; }
+.sf3_checkgroup .sub input {float: left; display: inline-block; padding: 5px 50px; background: #f90; border: 1px solid #f60; color: #fff; cursor: pointer; font-size: 16px; border-radius: 2px; }
+.sf3_checkgroup .sub {padding: 20px 0; }
+.sf3_checkgroup .sub input:hover {background: #f60; }
+.sf3_checkgroup .sub .sf3_cancel{border: 1px solid #b7b7b7; background-color: #e5e5e5; color: #000000; padding: 5px 15px; margin-left: 15px; }
+.sf3_checkgroup .sub .sf3_cancel:hover{background:#e5e5e5; }
+.sf_btns_group .sf_fxs_on{ background:#5ca7f4 url(http://i1.hdfimg.com/doctorzone/images/fxon.png) no-repeat 20px center; color: #FFFFFF;}
+.sf_btns_group .sf_qfs_on{background:#5ca7f4 url(http://i1.hdfimg.com/doctorzone/images/qfon.png) no-repeat 20px center; color: #FFFFFF;}
+.sf_btns_group .sf_zsfs_on{background:#5ca7f4 url(http://i1.hdfimg.com/doctorzone/images/sfon.png) no-repeat 20px center; color: #FFFFFF;}
+.zx_group_in_check input{ display: none;}
+
+.ico_btn_orange_small{ display: inline-block; position: relative; z-index: 0; height:26px; line-height: 26px; color: #FFF !important; padding: 0 10px 0 26px; background: #f70; border-radius: 3px; margin-left: 10px; font-size: 14px;}
+.ico_btn_orange_small:hover{ background: #f60;}
+.ico_btn_orange_small span{ display:block; position: absolute; left: 0; top: 0; z-index: 0; width: 26px; height: 26px;}
+
+.ico_add_small{ background: url(http://i1.hdfimg.com/doctorzone/images/shizi.png) no-repeat center center;}
+.ico_set_small{ background: url(http://i1.hdfimg.com/doctorzone/images/set.png) no-repeat center center;}
+
+.sf_n_tips{ background: #fff9e7; border: 1px solid #ffe2b0; padding: 10px; margin-bottom: 10px; font-family: "ËÎÌו"; color: #f90;}
+.sf_n_tips a{ line-height: 1; background: #ff9600; border-radius: 3px; color: #FFF; padding: 2px 10px;}
+.sf_n_tips a:hover{ text-decoration: none; color: #FFF; background: #f70;}
+.sf_search_tips{ background: #e3eeff; padding: 20px; border: 1px solid #dcdcdc; border-bottom: none; font-size: 14px; font-family: "ËÎÌו"; }
+.sf_search_tips .i_bor{ height: 18px; padding: 5px; border: 1px solid #dcdcdc; background: #FFF;}
+
+
+
+.cjtz_con .left_bar .tit_visit .o{ background:none;}
+.cjtz_con .left_bar .tit_visited .o{ background:#f70 url(http://i1.hdfimg.com/doctorzone/images/left_bg_visted.png) no-repeat 17px center;color:#fff}
+.sf_btns{float: left;display: inline; width: auto; padding-right: 10px; height: 36px; line-height: 36px; border: 1px solid #98d4ff; border-radius: 3px; margin-right: 20px; font-size: 14px; color: #000000; text-indent: 30px;}
+.sf_fxs{ background: #D6EEFF url(http://i1.hdfimg.com/touch/images/pdc_share2.png) no-repeat 7px center;}
+.sf_qfs{ background: #D6EEFF url(http://i1.hdfimg.com/touch/images/pdc_qf2.png) no-repeat 7px center;}
+.sf_zsfs{ background: #D6EEFF url(http://i1.hdfimg.com/touch/images/pdc_sf2.png) no-repeat 7px center;}
+.sf_wz{ background: #D6EEFF url(http://i1.hdfimg.com/touch/images/pdc_dcb2.png) no-repeat 7px center;}
+.sf_fk{ background: #D6EEFF url(http://i1.hdfimg.com/touch/images/pdc_dcb2.png) no-repeat 7px center;}
+.sf_fxs:hover{ color: #000;}
+.sf_qfs:hover{ color: #000;}
+.sf_zsfs:hover{ color: #000;}
+.sf_wz:hover{ color: #000;}
+.sf_fk:hover{ color: #000;}
+.cjtz_con .right_con .sf_fxs:hover{ color: #000;}
+.cjtz_con .right_con .sf_qfs:hover{ color: #000;}
+.cjtz_con .right_con .sf_zsfs:hover{ color: #000;}
+.cjtz_con .right_con .sf_wz:hover{ color: #000;}
+.cjtz_con .right_con .sf_fk:hover{ color: #000;}
+.sf_btns_group .sf_fxs_on{ background:#5ca7f4 url(http://i1.hdfimg.com/touch/images/pdc_share1.png) no-repeat 7px center; color: #FFF;}
+.sf_btns_group .sf_qfs_on{background:#5ca7f4 url(http://i1.hdfimg.com/touch/images/pdc_qf1.png) no-repeat 7px center; color: #FFF;}
+.sf_btns_group .sf_zsfs_on{background:#5ca7f4 url(http://i1.hdfimg.com/touch/images/pdc_sf1.png) no-repeat 7px center; color: #FFF;}
+.sf_btns_group .sf_wz_on{background:#5ca7f4 url(http://i1.hdfimg.com/touch/images/pdc_dcb1.png) no-repeat 7px center; color: #FFF;}
+.sf_btns_group .sf_fk_on{background:#5ca7f4 url(http://i1.hdfimg.com/touch/images/pdc_dcb1.png) no-repeat 7px center; color: #FFF;}
+.sf_fxs_on:hover{ color: #FFF;}
+.sf_qfs_on:hover{ color: #FFF;}
+.sf_zsfs_on:hover{ color: #FFF;}
+.sf_wz_on:hover{ color: #FFF;}
+.sf_fk_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_fxs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_qfs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_zsfs_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_wz_on:hover{ color: #FFF;}
+.cjtz_con .right_con .sf_fk_on:hover{ color: #FFF;}

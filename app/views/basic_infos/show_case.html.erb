@@ -1,0 +1,69 @@
+<div class="about-main">
+    <%= link_to '返回咨询列表', member_url(@user.name), :class => "button primary" %>
+    <p style="height: 30px;" ></p>
+   <% if !@basic_case.reply.nil? %>
+    <h1>医生回复</h1>
+    <hr>
+<dl class="dl-horizontal">
+      <dt>咨询结果 : </dt>
+      <dd><%= t(@basic_case.reply.sick_name) %> <%= t(@basic_case.reply.sick_sub_name) %></dd>
+      <dt>问题回复 : </dt>
+      <dd><%= @basic_case.reply.main_desc %></dd>
+      <% if  !(@basic_case.process.nil?) and @basic_case.process == 'plus'  %>
+      <dt>加号结果 : </dt>
+      <dd><%= @basic_case.reply.allow_plus ? "加号成功":"加号失败"  %></dd>
+      <% end %>
+      <% if  @basic_case.reply.allow_plus %>
+      <dt>加号日期 : </dt>
+      <dd><%= ( @basic_case.reply.plus_date.nil? or @basic_case.reply.plus_date.blank? ) ? "日期未指定": @basic_case.reply.plus_date.strftime('%Y-%m-%d %H时%M分') %></dd>
+      <% end %>
+    </dl>
+    <p style="height: 40px;" ></p>
+   <% end %>
+    <h1>一般信息</h1>
+    <hr>
+<dl class="dl-horizontal">
+      <dt>主诉 : </dt>
+      <dd><%= @basic_case.main_desc %></dd>
+      <dt>详细描述 : </dt>
+      <dd><%= @basic_case.detail_desc %></dd>
+      <dt>诊疗经过 : </dt>
+      <dd><%= @basic_case.treat_desc %></dd>
+      <dt>目前情况 : </dt>
+      <dd><%= t(@basic_case.now_desc) %></dd>
+    </dl>
+    <p style="height: 70px;" ></p>
+    
+    <h1>体征信息</h1>
+    <hr>
+<dl class="dl-horizontal">
+      <dt>体温 : </dt>
+      <dd><%= @basic_case.body_sign.temperature %></dd>
+      <dt>脉搏 : </dt>
+      <dd><%= @basic_case.body_sign.pulse %></dd>
+      <dt>高压 : </dt>
+      <dd><%= @basic_case.body_sign.high_pressure %></dd>
+      <dt>低压 : </dt>
+      <dd><%= @basic_case.body_sign.low_pressure %></dd>
+      <dt>双下肢是否肿胀 : </dt>
+      <dd><%= (@basic_case.body_sign.swelling.nil? or @basic_case.body_sign.swelling.blank?) ? "否": t(@basic_case.body_sign.swelling) %></dd>
+      <dt>其他体征 : </dt>
+      <dd><%= t(@basic_case.body_sign.status_name.split)  %></dd>
+    </dl>
+    <p style="height: 70px;" ></p>
+
+    <% @basic_case.sick_assets.each do |sick_asset| %>
+    <p style="height: 40px;" ></p>
+    <h3> 附件标题: <%= (sick_asset.title.nil? or sick_asset.title.blank?) ? "未填写":sick_asset.title  %> </h3>
+    <hr>
+<dl class="dl-horizontal">
+      <dt>附件描述 : </dt>
+      <dd><%= (sick_asset.desc.nil? or sick_asset.desc.blank? ) ? "未填写":sick_asset.desc %></dd>
+      <dt>附件类型 : </dt>
+      <dd><%= (sick_asset.asset_type.nil? or sick_asset.asset_type.blank? )  ? "未填写": t(sick_asset.asset_type) %></dd>
+      <dt>查看附件 : </dt>
+    <dd><a href="#" onClick="window.open('<%= sick_asset.asset.nil? ? "#":"http://"+Settings.qiniu.bucket_domain+"/"+sick_asset.asset %>','newwindow','height=500,width=611,scrollbars=yes,status=yes,screenX=400,screenY=400')" ><%= sick_asset.filename %></a></dd>
+    </dl>
+     <% end %>
+
+</div>

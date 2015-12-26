@@ -1,0 +1,798 @@
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_add_operation.html.erb app/views/basic_infos/_add_operation.html.erb
+37a38,59
+>   <div class="primary-info">
+>     <%= form_for(Operation.new) do |f| %>
+>       <dl class="form">
+>         <dt><%= f.label '手术/外伤名称' %></dt>
+>         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次XX手术" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '病情简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+>         </dd>
+>       </dl>
+>         <dl class="form">
+>           <dt>
+>           <%= f.label '手术/外伤日期' %>
+>           </dt>
+>           <dd>
+>           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"   %>
+>           </dd>
+>         </dl>
+>     <% end %>
+> </div>
+39,44d60
+<     <ul class='upload-tip'>
+<       <li>附件大小：最大100M</li>
+<       <li>格式支持：xxx</li>
+<       <li>说明1  </li>
+<       <li>说明2 </li>
+<     </ul>
+70d85
+<  </div>
+72,91d86
+<   <div class="primary-info">
+<     <%= form_for(Operation.new) do |f| %>
+<       <dl class="form">
+<         <dt><%= f.label '手术/外伤名称' %></dt>
+<         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次XX手术" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '病情简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+<         </dd>
+<       </dl>
+<         <dl class="form">
+<           <dt>
+<           <%= f.label '手术/外伤日期' %>
+<           </dt>
+<           <dd>
+<           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"   %>
+<           </dd>
+<         </dl>
+93,95c88
+<         <%= f.submit '保存手术/外伤信息', class: "button", :disabled => true,
+<           data: {disable_with: t('video_saving') + "..."},
+<           id: "submit_operation_info" %>
+---
+> 	<input class="button primary" data-disable-with="保存中..." disabled="disabled" id="submit_operation_info" name="commit" type="submit" value="保存存手术/外伤信息">
+97,98c90,91
+<     <% end %>
+< </div>
+---
+>  </div>
+>  </div>
+125a119,121
+> $('input#submit_operation_info').click(function(){
+>          $('form#new_operation').submit();
+> });
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_add_sick_asset.html.erb app/views/basic_infos/_add_sick_asset.html.erb
+37a38,57
+>   <div class="primary-info">
+>     <%= form_for(SickAsset.new,:remote => true) do |f| %>
+>       <dl class="form">
+>         <dt><%= f.label '检查标题' %></dt>
+>         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次冠心病检查" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '症状简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+>         </dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '选择检查资料类型' %></dt>
+>         <dd>
+>           <%= f.select(:asset_type,'<option value="CT" >影相科(CT)相关检查</option><option value="exper" >实验室相关检查</option><option value="heart" >心电图相关检查</option>'.html_safe, {}, { :class => 'supershort' } ) %>  
+>         </dd>
+>       </dl>
+>     <% end %>
+> </div>
+64,82c84,86
+<  </div>
+<   <div class="primary-info">
+<     <%= form_for(SickAsset.new,:remote => true) do |f| %>
+<       <dl class="form">
+<         <dt><%= f.label '检查标题' %></dt>
+<         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次冠心病检查" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '症状简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+<         </dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '选择检查资料类型' %></dt>
+<         <dd>
+<           <%= f.select(:asset_type,'<option value="CT" >影相科(CT)相关检查</option><option value="exper" >实验室相关检查</option><option value="heart" >心电图相关检查</option>'.html_safe, {}, { :class => 'supershort' } ) %>  
+<         </dd>
+<       </dl>
+---
+> 
+> <div class="third-info">
+> </div>
+84,86c88
+<         <%= f.submit t('submit_video_info'), class: "button", :disabled => true,
+<           data: {disable_with: t('video_saving') + "..."},
+<           id: "submit_sick_asset_info" %>
+---
+> 	<input class="button primary" data-disable-with="检查资料保存中..." disabled="disabled" id="submit_sick_asset_info" name="commit" type="submit" value="保存检查资料信息">
+88,89c90
+<     <% end %>
+< </div>
+---
+>  </div>
+90a92,100
+> 
+> 
+> <% content_for :template_js do %>
+> <script>
+> $('input#submit_sick_asset_info').click(function(){
+>          $('form#new_sick_asset').submit();
+> });
+> </script>
+> <% end %>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_add_sickness.html.erb app/views/basic_infos/_add_sickness.html.erb
+37a38,59
+>   <div class="primary-info">
+>     <%= form_for(Sickness.new) do |f| %>
+>       <dl class="form">
+>         <dt><%= f.label '病历标题' %></dt>
+>         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次冠心病检查" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '症状简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+>         </dd>
+>       </dl>
+>         <dl class="form">
+>           <dt>
+>           <%= f.label '看病日期' %>
+>           </dt>
+>           <dd>
+>           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"   %>
+>           </dd>
+>         </dl>
+>     <% end %>
+> </div>
+39,44d60
+<     <ul class='upload-tip'>
+<       <li>附件大小：最大100M</li>
+<       <li>格式支持：xxx</li>
+<       <li>说明1  </li>
+<       <li>说明2 </li>
+<     </ul>
+70,91c86,87
+<  </div>
+< <div class="third-info"></div>
+<   <div class="primary-info">
+<     <%= form_for(Sickness.new) do |f| %>
+<       <dl class="form">
+<         <dt><%= f.label '病历标题' %></dt>
+<         <dd><%= f.text_field :title, id: "video-title",:placeholder => "如：一次冠心病检查" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '症状简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8',:placeholder => "如: 快走时胸闷、胸痛10年,加重1周" %>
+<         </dd>
+<       </dl>
+<         <dl class="form">
+<           <dt>
+<           <%= f.label '看病日期' %>
+<           </dt>
+<           <dd>
+<           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"   %>
+<           </dd>
+<         </dl>
+---
+> <div class="third-info">
+> </div>
+93,95c89
+<         <%= f.submit t('submit_video_info'), class: "button", :disabled => true,
+<           data: {disable_with: t('video_saving') + "..."},
+<           id: "submit_sickness_info" %>
+---
+> 	<input class="button primary" data-disable-with="保存中..." disabled="disabled" id="submit_sickness_info" name="commit" type="submit" value="保存信息">
+97,98c91
+<     <% end %>
+< </div>
+---
+>  </div>
+123a117,119
+> });
+> $('input#submit_sickness_info').click(function(){
+>          $('form#new_sickness').submit();
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_all_added_operations.html.erb app/views/basic_infos/_all_added_operations.html.erb
+7c7
+<             <%= operation.title %>
+---
+>             <%= operation.title %> &nbsp;&nbsp;&nbsp;&nbsp; <%= operation.updated_at.strftime '%Y-%m-%d %H:%M:%S' %>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_all_added_sick_assets.html.erb app/views/basic_infos/_all_added_sick_assets.html.erb
+7c7
+<             <%= sick_asset.title %>
+---
+>             <%= sick_asset.title %> &nbsp;&nbsp;&nbsp;&nbsp; <%= sick_asset.updated_at.strftime '%Y-%m-%d %H:%M:%S' %>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_all_added_sicknesses.html.erb app/views/basic_infos/_all_added_sicknesses.html.erb
+7c7
+<             <%= sickness.title %>
+---
+>             <%= sickness.title %> &nbsp;&nbsp;&nbsp;&nbsp; <%= sickness.updated_at.strftime '%Y-%m-%d %H:%M:%S' %>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_aside.html.erb app/views/basic_infos/_aside.html.erb
+5c5
+<     <li><a class="<%= request.path == "/createmyfaq"? "active":"faq" %>" href="/createmyfaq">编辑中的咨询</a></li>
+---
+>     <li><a class="<%= request.path == "/createmyfaq"? "active":"faq" %>" href="/createmyfaq">待提交的咨询</a></li>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/commit_doctor.html.erb app/views/basic_infos/commit_doctor.html.erb
+11c11
+<         <a href="#paid-courses">3.附件上传</a>
+---
+>         <a href="#paid-courses">3.检查资料上传</a>
+15c15
+< <div class="single-form-container">
+---
+> <div class="single-form-container" style="margin-left: 50px;">
+23c23
+<           <%= f.label '主诉' %>
+---
+>           <%= f.label '主诉' %>&nbsp;&nbsp;&nbsp;&nbsp;包括主要症状、首次发作至今为止持续时间,限20-50字
+26c26
+<           <%= f.text_area  :main_desc, :class => "short", :placeholder => "包括主要症状、首次发作至今为止持续时间,限20-50字，如：快走时胸闷、胸痛10年，加重1周" %>
+---
+>           <%= f.text_area  :main_desc, :class => "short", :placeholder => "如：快走时胸闷、胸痛10年，加重1周" %>
+31c31
+<           <%= f.label '详细描述' %>
+---
+>           <%= f.label '详细描述' %>&nbsp;&nbsp;&nbsp;&nbsp;详细表述,内容包括：主要症状，每次持续时间、多于什么情况下发作（活动）、怎么缓解（服药还是其他处理），其他伴随不适, 限500字
+34c34
+<           <%= f.text_area  :detail_desc, :class => "short", :placeholder => "详细表述,内容包括：主要症状，每次持续时间、多于什么情况下发作（活动）、怎么缓解（服药还是其他处理），其他伴随不适, 限500字。" %>
+---
+>           <%= f.text_area  :detail_desc, :class => "short", :placeholder => "" %>
+39c39
+<           <%= f.label '诊疗经过' %>
+---
+>           <%= f.label '诊疗经过' %>&nbsp;&nbsp;&nbsp;&nbsp;去那些医院看过、诊断是什么，怎么治疗，效果怎么样
+42c42
+<           <%= f.text_area  :treat_desc, :class => "short", :placeholder => "去那些医院看过、诊断是什么，怎么治疗，效果怎么样" %>
+---
+>           <%= f.text_area  :treat_desc, :class => "short", :placeholder => "" %>
+50c50
+<           <%= f.select(:now_desc,'<option value="better" >有所好转</option><option value="normal" >无明显变化</option><option value="worse" >持续加重</option>'.html_safe ) %>  
+---
+>           <%= f.select(:now_desc,'<option value="better" >有所好转</option><option value="normal" >无明显变化</option><option value="worse" >持续加重</option>'.html_safe , {}, { :class=>'supershort' }) %>  
+54c54
+<         <p> <%= f.submit '保存', :class => "button primary" %> </p>
+---
+>         <p> <%= f.submit '下一步', :class => "button primary" %> </p>
+58a59
+> 
+64c65
+<       <h3><i class="fa fa-plus fa-lg"></i> 咨询附件</h3>
+---
+>       <h3><i class="fa fa-plus fa-lg"></i> 检查资料列表</h3>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/diabetes.html.erb app/views/basic_infos/diabetes.html.erb
+48c48
+<           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe ) %>  
+---
+>           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/edit.html app/views/basic_infos/edit.html
+41c41
+<           <%= f.select(:gender,'<option value="male" >男</option><option value="female" >女</option>'.html_safe ) %>  
+---
+>           <%= f.select(:gender,'<option value="male" >男</option><option value="female" >女</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+67c67
+<           <%= f.select(:smokeinfo,'<option value="never" >从不/极少</option><option value="sometimes" >偶尔</option><option value="offen" >经常</option>'.html_safe ) %>  
+---
+>           <%= f.select(:smokeinfo,'<option value="never" >从不/极少</option><option value="sometimes" >偶尔</option><option value="offen" >经常</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+85c85
+<           <%= f.select(:drink,'<option value="never" >从不/极少</option><option value="sometimes" >偶尔</option><option value="offen" >经常</option>'.html_safe ) %>  
+---
+>           <%= f.select(:drink,'<option value="never" >从不/极少</option><option value="sometimes" >偶尔</option><option value="offen" >经常</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_edit_operation.html.erb app/views/basic_infos/_edit_operation.html.erb
+58a59,61
+> $('input#submit_operation_info1').click(function(){
+> 	$('form.edit_operation').submit();
+> });
+63,65c66,89
+<   <div class="video-delete-btn">
+<     <%= link_to "删除本附件", operation, :method => "delete", class: "danger minibutton",
+<       :confirm => t('confirm_delete') %>
+---
+>   <div class="primary-info">
+>     <%= form_for operation do |f| %>
+>       <dl class="form">
+>         <dt>
+>           <%= f.hidden_field :id %>
+>           <%= f.label '手术/外伤名称' %>
+>         </dt>
+>         <dd><%= f.text_field :title, id: "video-title" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '病情简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+>         </dd>
+>       </dl>
+>         <dl class="form">
+>           <dt>
+>           <%= f.label '手术/外伤日期' %>
+>           </dt>
+>           <dd>
+>           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"  %>
+>           </dd>
+>         </dl>
+>     <% end %>
+68,74c92
+<     <ul class='upload-tip'>
+<       <li>附件大小：最大100M</li>
+<       <li>格式支持：xxx</li>
+<       <li>说明1  </li>
+<       <li>说明2 </li>
+<     </ul>
+<     <p id="video-filename">文件名: <b><%= operation.filename %></b></p>
+---
+>     <p id="video-filename">查看文件: <a href="http://<%= Settings.qiniu.bucket_domain %>/<%= operation.asset %>"><%= operation.filename %></a></p>
+98d115
+<   </div>
+100,122d116
+<   <div class="primary-info">
+<     <%= form_for operation do |f| %>
+<       <dl class="form">
+<         <dt>
+<           <%= f.hidden_field :id %>
+<           <%= f.label '手术/外伤名称' %>
+<         </dt>
+<         <dd><%= f.text_field :title, id: "video-title" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '病情简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+<         </dd>
+<       </dl>
+<         <dl class="form">
+<           <dt>
+<           <%= f.label '手术/外伤日期' %>
+<           </dt>
+<           <dd>
+<           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"  %>
+<           </dd>
+<         </dl>
+124,126c118
+<         <%= f.submit '保存手术/外伤信息', class: "button",
+<           data: { disable_with: t('video_saving') + "..." },
+<           id: "submit_operation_info" %>
+---
+> <input class="button primary" data-disable-with="保存中..." id="submit_operation_info1" name="commit" type="submit" value="更新手术/外伤信息">
+128c120,123
+<     <% end %>
+---
+>   <div class="video-delete-btn">
+>     <%= link_to "删除本附件", operation, :method => "delete", class: "danger minibutton",
+>       :confirm => t('confirm_delete') %>
+>   </div>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_edit_sick_asset.html.erb app/views/basic_infos/_edit_sick_asset.html.erb
+36a37,39
+> $('input#submit_sick_asset_info1').click(function(){
+> 	$('form.edit_sick_asset').submit();
+> });
+40,42c43,64
+<   <div class="video-delete-btn">
+<     <%= link_to "删除本附件", sick_asset, :method => "delete", :remote=> true, class: "danger minibutton",
+<       :confirm => t('confirm_delete') %>
+---
+>   <div class="primary-info">
+>     <%= form_for(sick_asset,:remote =>true) do |f| %>
+>       <dl class="form">
+>         <dt>
+>           <%= f.hidden_field :id %>
+>           <%= f.label '病历标题' %>
+>         </dt>
+>         <dd><%= f.text_field :title, id: "video-title" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '症状简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+>         </dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '选择附件类型' %></dt>
+>         <dd>
+>           <%= f.select(:asset_type,'<option value="CT" >影相科(CT)相关检查</option><option value="exper" >实验室相关检查</option><option value="heart" >心电图相关检查</option>'.html_safe, {}, { :class => 'supershort' } ) %>  
+>         </dd>
+>       </dl>
+>     <% end %>
+45,51c67
+<     <ul class='upload-tip'>
+<       <li>附件大小：最大100M</li>
+<       <li>格式支持：xxx</li>
+<       <li>说明1  </li>
+<       <li>说明2 </li>
+<     </ul>
+<     <p id="video-filename">文件名: <b><%= sick_asset.filename %></b></p>
+---
+>     <p id="video-filename">查看文件: <a href="http://<%= Settings.qiniu.bucket_domain %>/<%= sick_asset.asset %>"><%= sick_asset.filename %></a></p>
+75,97c91,92
+<   </div>
+<   <div class="third-info"></div>
+<   <div class="primary-info">
+<     <%= form_for(sick_asset,:remote =>true) do |f| %>
+<       <dl class="form">
+<         <dt>
+<           <%= f.hidden_field :id %>
+<           <%= f.label '病历标题' %>
+<         </dt>
+<         <dd><%= f.text_field :title, id: "video-title" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '症状简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+<         </dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '选择附件类型' %></dt>
+<         <dd>
+<           <%= f.select(:asset_type,'<option value="CT" >影相科(CT)相关检查</option><option value="exper" >实验室相关检查</option><option value="heart" >心电图相关检查</option>'.html_safe, {}, { :class => 'supershort' } ) %>  
+<         </dd>
+<       </dl>
+---
+>   <div class="third-info">
+> </div>
+99,101c94
+<         <%= f.submit t('update_video_info'), class: "button",
+<           data: { disable_with: t('video_saving') + "..." },
+<           id: "submit_sick_asset_info" %>
+---
+> <input class="button primary" data-disable-with="检查资料保存中..." id="submit_sick_asset_info1" name="commit" type="submit" value="更新检查资料信息">
+103c96,98
+<     <% end %>
+---
+>   <div class="video-delete-btn">
+>     <%= link_to "删除本附件", sick_asset, :method => "delete", :remote=> true, class: "danger minibutton",
+>       :confirm => t('confirm_delete') %>
+105a101,102
+>   </div>
+> <script>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/_edit_sickness.html.erb app/views/basic_infos/_edit_sickness.html.erb
+59a60,62
+> $('input#submit_sickness_info1').click(function(){
+> 	$('form.edit_sickness').submit();
+> });
+63,65c66,89
+<   <div class="video-delete-btn">
+<     <%= link_to "删除本附件", sickness, :method => "delete", class: "danger minibutton",
+<       :confirm => t('confirm_delete') %>
+---
+>   <div class="primary-info">
+>     <%= form_for sickness do |f| %>
+>       <dl class="form">
+>         <dt>
+>           <%= f.hidden_field :id %>
+>           <%= f.label '病历标题' %>
+>         </dt>
+>         <dd><%= f.text_field :title, id: "video-title" %></dd>
+>       </dl>
+>       <dl class="form">
+>         <dt><%= f.label '症状简要描述' %></dt>
+>         <dd>
+>           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+>         </dd>
+>       </dl>
+>         <dl class="form">
+>           <dt>
+>           <%= f.label '看病日期' %>
+>           </dt>
+>           <dd>
+>           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"  %>
+>           </dd>
+>         </dl>
+>     <% end %>
+68,74c92
+<     <ul class='upload-tip'>
+<       <li>附件大小：最大100M</li>
+<       <li>格式支持：xxx</li>
+<       <li>说明1  </li>
+<       <li>说明2 </li>
+<     </ul>
+<     <p id="video-filename">文件名: <b><%= sickness.filename %></b></p>
+---
+>     <p id="video-filename">查看文件: <a href="http://<%= Settings.qiniu.bucket_domain %>/<%= sickness.asset %>"><%= sickness.filename %></a></p>
+98d115
+<   </div>
+100,122d116
+<   <div class="primary-info">
+<     <%= form_for sickness do |f| %>
+<       <dl class="form">
+<         <dt>
+<           <%= f.hidden_field :id %>
+<           <%= f.label '病历标题' %>
+<         </dt>
+<         <dd><%= f.text_field :title, id: "video-title" %></dd>
+<       </dl>
+<       <dl class="form">
+<         <dt><%= f.label '症状简要描述' %></dt>
+<         <dd>
+<           <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+<         </dd>
+<       </dl>
+<         <dl class="form">
+<           <dt>
+<           <%= f.label '看病日期' %>
+<           </dt>
+<           <dd>
+<           <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"  %>
+<           </dd>
+<         </dl>
+124,126c118
+<         <%= f.submit t('update_video_info'), class: "button",
+<           data: { disable_with: t('video_saving') + "..." },
+<           id: "submit_sickness_info" %>
+---
+> <input class="button primary" data-disable-with="保存中..." id="submit_sickness_info1" name="commit" type="submit" value="更新病历信息">
+128c120,123
+<     <% end %>
+---
+>   <div class="video-delete-btn">
+>     <%= link_to "删除本附件", sickness, :method => "delete", class: "danger minibutton",
+>       :confirm => t('confirm_delete') %>
+>   </div>
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/hyper.html.erb app/views/basic_infos/hyper.html.erb
+49c49
+<           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe ) %>  
+---
+>           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/hyperlipidemia.html.erb app/views/basic_infos/hyperlipidemia.html.erb
+48c48
+<           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe ) %>  
+---
+>           <%= f.select(:ishave,'<option value=true >有</option><option value=false >无</option>'.html_safe, {}, { :class => 'supershort'} ) %>  
+diff -r ../tool/chenfw/hys/Hospital/app/views/basic_infos/show.html.erb app/views/basic_infos/show.html.erb
+79c79,80
+<     <%= link_to '免费咨询', basic_case_free_path(@basic_case), :method => :post, :class => "button danger large right" %>
+---
+> 	<p style="height: 20px;" ></p>
+>     <%= link_to '免费咨询', basic_case_free_path(@basic_case), :method => :post, :class => "button danger large" %>
+Only in app/views/doctors: search_doctor.html.erb
+diff -r ../tool/chenfw/hys/Hospital/app/views/doctors/search.html.erb app/views/doctors/search.html.erb
+1c1
+<   <%= render "shared/doctor_search" %>
+---
+>   <%= render "shared/doctor_search", :doctor_groups => @doctor_groups, :process => @process %>
+diff -r ../tool/chenfw/hys/Hospital/app/views/layouts/basic_infos.html.erb app/views/layouts/basic_infos.html.erb
+1a2,5
+> <div class="container2" >
+>   <img src="/chan.jpg" height="150" width="1200" />
+>   <p class="center-username"><%= @user.name %>的个人空间</p>
+> </div>
+diff -r ../tool/chenfw/hys/Hospital/app/views/shared/_doctor.html.erb app/views/shared/_doctor.html.erb
+1,32d0
+< <script type="text/javascript">
+< //js鏃犵紳婊氬姩浠ｇ爜
+< var prscrollLeft = -1;
+< function marquee(i, direction){
+< 	var obj = document.getElementById("marquee" + i);
+< 	var obj1 = document.getElementById("marquee" + i + "_1");
+< 	var obj2 = document.getElementById("marquee" + i + "_2");
+< 	if (direction == "up"){
+< 		if (obj2.offsetTop - obj.scrollTop <= 0){
+< 			obj.scrollTop -= (obj1.offsetHeight + 20);
+< 		}else{
+< 			var tmp = obj.scrollTop;
+< 			obj.scrollTop++;
+< 			if (obj.scrollTop == tmp){
+< 				obj.scrollTop = 1;
+< 			}
+< 		}
+< 	}else{
+< 		if (obj2.offsetWidth - obj.scrollLeft <= 0){
+< 			obj.scrollLeft -= obj1.offsetWidth;
+< 		}else{
+< 		  
+< 			obj.scrollLeft=obj.scrollLeft+1;
+< 			if(prscrollLeft == obj.scrollLeft)
+< 		  {
+< 		    obj.scrollLeft=0;
+< 		  }
+< 			prscrollLeft=obj.scrollLeft;
+< 			
+< 		}
+< 	}
+< }
+34,139c2,62
+< function marqueeStart(i, direction){
+< 	var obj = document.getElementById("marquee" + i);
+< 	var obj1 = document.getElementById("marquee" + i + "_1");
+< 	var obj2 = document.getElementById("marquee" + i + "_2");
+< 
+< 	obj2.innerHTML = obj1.innerHTML;
+< 	var marqueeVar = window.setInterval("marquee("+ i +", '"+ direction +"')", 20);
+< 	obj.onmouseover = function(){
+< 		window.clearInterval(marqueeVar);
+< 	}
+< 	obj.onmouseout = function(){
+< 		marqueeVar = window.setInterval("marquee("+ i +", '"+ direction +"')", 20);
+< 	}
+< }
+< </script>
+< <div class="content w1200 layout">
+<   <hr />
+<   <div class="mb50 layout">
+<     <div class="fl w1200 gdl_con">
+<       <div class="layout">
+<         <h2>华人名医</h2>
+<         <div id="consult_dep" class="fl gdl_tab ">
+<           <ul>
+<             <li class="cur"><a href="javascript:void(0);">心血管</a></li>
+<             <li><a href="javascript:void(0);" class="" data="A">高血压</a></li>
+<             <li><a href="javascript:void(0);" class="" data="B">冠心病</a></li>
+<           </ul>
+<         </div>
+<         <a href="" class="fr more "> <span>更多医生</span> <i class="more_i g_icon"></i> </a> </div>
+<       <div  id="marquee1"  class="layout cons">
+<        <div style="width:8000px;">
+<         <ul id="marquee1_1">
+<           <li>
+<             <div class="layout mt20"><a href="/doctor_website" class="fl c_doca"><img oncontextmenu="return(false);" src="/img/2010424171427302.jpg" alt="" width="90" height="100"></a>
+<               <div class="fl d_info">
+<                 <p><a href="/doctor_website" class="d_name">郑宏</a></p>
+<                 <p class="fs12 gray_1">主治医师</p>
+<               </div>
+<             </div>
+<             <div class="mt20 d_hos">
+<               <p class=""><a href="" class="hos_n word_hid">阜外医院</a><a href="" class="gray_1 dep_n word_hid"></a></p>
+<               <p class="fs12 gray_1 mt8 d_det">各种先心病的诊断与介入治疗，以及冠心病、瓣膜病 </p>
+<             </div>
+<             <div class="doc_bottom"><a href="/doctor_website" ><span class="btn btn_con fl">加号</span></a><a href="/doctor_website"><span class="btn btn_con fr">咨询</span></a></div>
+<           </li>
+<           <li>
+<             <div class="layout mt20"><a href="/doctor_website" class="fl c_doca"><img oncontextmenu="return(false);" src="http://images.91160.com/upload/3274/doctor/1/doctor_12325.jpg" alt="" width="90" height="100"></a>
+<               <div class="fl d_info">
+<                 <p><a href="" class="d_name">杨农</a></p>
+<                 <p class="fs12 gray_1">主任医师</p>
+<               </div>
+<             </div>
+<             <div class="mt20 d_hos">
+<               <p class=""><a href="http://www.91160.com/unit/show/uid-341.html" class="hos_n word_hid">湖南省肿瘤医院</a><a href="http://www.91160.com/dep/show/depid-3689.html" class="gray_1 dep_n word_hid"></a></p>
+<               <p class="fs12 gray_1 mt8 d_det">专注肺癌/胃肠肿瘤的分子靶向治疗、国际规范化治疗。在“..</p>
+<             </div>
+<             <div class="doc_bottom"><span class="btn btn_con fl">加号</span><a href=""><span class="btn btn_con fr">咨询</span></a></div>
+<           </li>
+<           <li>
+<             <div class="layout mt20"><a href="" class="fl c_doca"><img oncontextmenu="return(false);" src="http://images.91160.com/upload/3316/doctor/1/doctor_100058961.jpg" alt="" width="90" height="100"></a>
+<               <div class="fl d_info">
+<                 <p><a href="" class="d_name">杨兴智</a></p>
+<                 <p class="fs12 gray_1">医师</p>
+<               </div>
+<             </div>
+<             <div class="mt20 d_hos">
+<               <p class=""><a href="" class="hos_n word_hid">阜外医院</a><a href="" class="gray_1 dep_n word_hid"></a></p>
+<               <p class="fs12 gray_1 mt8 d_det"> 擅长中西医结合方式治疗男性泌尿生殖系统感染、前列..</p>
+<             </div>
+<             <div class="doc_bottom"><span class="btn btn_con fl">加号</span><a href=""><span class="btn btn_con fr">咨询</span></a></div>
+<           </li>
+<            <li>
+<             <div class="layout mt20"><a href="" class="fl c_doca"><img oncontextmenu="return(false);" src="http://images.91160.com/upload/3316/doctor/1/doctor_100058961.jpg" alt="" width="90" height="100"></a>
+<               <div class="fl d_info">
+<                 <p><a href="" class="d_name">杨兴智</a></p>
+<                 <p class="fs12 gray_1">医师</p>
+<               </div>
+<             </div>
+<             <div class="mt20 d_hos">
+<               <p class=""><a href="" class="hos_n word_hid">阜外医院</a><a href="" class="gray_1 dep_n word_hid"></a></p>
+<               <p class="fs12 gray_1 mt8 d_det"> 擅长中西医结合方式治疗男性泌尿生殖系统感染、前列..</p>
+<             </div>
+<             <div class="doc_bottom"><span class="btn btn_con fl">加号</span><a href=""><span class="btn btn_con fr">咨询</span></a></div>
+<           </li>
+<           <li>
+<             <div class="layout mt20"><a href="" class="fl c_doca"><img oncontextmenu="return(false);" src="http://images.91160.com/upload/3316/doctor/1/doctor_100058961.jpg" alt="" width="90" height="100"></a>
+<               <div class="fl d_info">
+<                 <p><a href="" class="d_name">杨兴智</a></p>
+<                 <p class="fs12 gray_1">医师</p>
+<               </div>
+<             </div>
+<             <div class="mt20 d_hos">
+<               <p class=""><a href="" class="hos_n word_hid">阜外医院</a><a href="" class="gray_1 dep_n word_hid"></a></p>
+<               <p class="fs12 gray_1 mt8 d_det"> 擅长中西医结合方式治疗男性泌尿生殖系统感染、前列..</p>
+<             </div>
+<             <div class="doc_bottom"><span class="btn btn_con fl">加号</span><a href=""><span class="btn btn_con fr">咨询</span></a></div>
+<           </li>
+<         </ul>
+<         </ul>
+<          <ul id="marquee1_2">
+<         </div>
+<       </div>
+<     </div>
+<   </div>
+< </div>
+< <script type="text/javascript">marqueeStart(1, "left");</script>
+---
+> <% if process.blank? %>
+> <ul>
+>                                                    <li class="search_item docter_item">
+>                 <div class="left_img_big">
+>                   <%= image_tag doctor.final_avatar_url %>
+>                 </div>
+>                 <div class="right_mun"></div>
+>                 <div class="right_btn"> <%= link_to doctor_path(doctor), class: "button primary" do %> 医生空间 <% end %><em>|</em> 
+>                 <div class="doc_info fl">
+>                 <h2><%=  t(doctor.name) %></a><span><%=  t(doctor.rank) %></span> </h2>
+>                 <div class="h_info layout">
+>                 <p><%= t(doctor.hospital) %> <br><%=  t(doctor.room) %></p>
+>                 </div>
+>                 <div class="doc_sbtn">
+>                 <ul class="fun_btn_ul layout">
+> 	<%  if !doctor.reservations.nil?  %>
+> 	<%  doctor.reservations.each do |reservation|  %>		
+>                   <li ><%= t(reservation.price_type)  %></li>
+> 	<%  end  %>		
+> 	<%  end  %>		
+>                 </ul>
+>                 </div>
+>                 </div>
+>                 <div class="doc_expert_in fs14 fl"> <%= doctor.main_desc %> </div>
+>                 <div class="doc_score fl">
+>                   <span class="score_mun fs14"></span>
+>                                     <span class="dp_links fs12"></span>
+>                 </div>
+>               </li>
+>                          </ul>
+> <% else %>
+> <ul>
+>                                                    <li class="search_item docter_item">
+>                 <div class="left_img_big">
+>                   <%= image_tag doctor.final_avatar_url %>
+>                 </div>
+>                 <div class="right_mun"></div>
+>                 <div class="right_btn"> <%= link_to doctor_commit_path(doctor), class: "button primary" do %> 医生空间 <% end %><em>|</em> 
+>                 <div class="doc_info fl">
+>                 <h2><%=  t(doctor.name) %></a><span><%=  t(doctor.rank) %></span> </h2>
+>                 <div class="h_info layout">
+>                 <p><%= t(doctor.hospital) %> <br><%=  t(doctor.room) %></p>
+>                 </div>
+>                 <div class="doc_sbtn">
+>                 <ul class="fun_btn_ul layout">
+> 	<%  if !doctor.reservations.nil?  %>
+> 	<%  doctor.reservations.each do |reservation|  %>		
+>                   <li ><%= t(reservation.price_type)  %></li>
+> 	<%  end  %>		
+> 	<%  end  %>		
+>                 </ul>
+>                 </div>
+>                 </div>
+>                 <div class="doc_expert_in fs14 fl"> <%= doctor.main_desc %> </div>
+>                 <div class="doc_score fl">
+>                   <span class="score_mun fs14"></span>
+>                                     <span class="dp_links fs12"></span>
+>                 </div>
+>               </li>
+>                          </ul>
+> <% end %>
+Only in ../tool/chenfw/hys/Hospital/app/views/shared: _doctor_result.html.erb
+Only in ../tool/chenfw/hys/Hospital/app/views/shared: _doctor_search.html.erb
+Only in app/views/shared: _home_doctor.html.erb
+diff -r ../tool/chenfw/hys/Hospital/app/views/shared/_home_masthead.html.erb app/views/shared/_home_masthead.html.erb
+25c25
+<              <%= render 'shared/doctor' %>
+---
+>              <%= render 'shared/home_doctor' %>
+Only in app/views/shared: _index_search.html.erb
+Only in app/views/shared: _search_result.html.erb
+diff -r ../tool/chenfw/hys/Hospital/app/views/shared/_tagline.html.erb app/views/shared/_tagline.html.erb
+5a6
+>                                                                 <li><a href=""><img src="img/img_3.png" alt=""></a></li>
+diff -r ../tool/chenfw/hys/Hospital/app/views/users/show.html.erb app/views/users/show.html.erb
+12c12
+<     <li><a class="<%= request.path == "/createmyfaq"? "active":"faq" %>" href="/createmyfaq">编辑中的咨询</a></li>
+---
+>     <li><a class="<%= request.path == "/createmyfaq"? "active":"faq" %>" href="/createmyfaq">待提交的咨询</a></li>
+diff -r ../tool/chenfw/hys/Hospital/app/views/users/showmystatus.html.erb app/views/users/showmystatus.html.erb
+12c12
+<     <li><a class="active"  href="/showmystatus">编辑中的咨询</a></li>
+---
+>     <li><a class="active"  href="/showmystatus">待提交的咨询</a></li>

@@ -1,0 +1,183 @@
+<link rel="stylesheet" type="text/css" href="/signup/global_about.css">
+<link rel="stylesheet" type="text/css" href="/signup/style.css">
+<script async="" src="/signup/analytics.js"></script>
+<script src="/signup/hm.js"></script>
+<script type="text/javascript" src="/signup/jquery-1.9.1.min.js"></script>
+
+
+<!-- 头部栏目end -->	<div class="bg_gray bo fu_pa">
+		<div class="main center bg_white w1000 ">
+			<div class="fc_banner">
+				<div class="fc_banner_outline">
+					<h2 class="fc_banner_in fl">设置登陆账号</h2>
+				</div>
+			</div>
+			<div class="content">
+				<div class="con_pd" style="padding-left:90px;">
+					<form action="/members" method="post" class="form" id="regform">
+						<h3>请填写以下账号信息</h3>
+						<ul class="pa_ul">
+							<li class="layout">
+								<span class="shouj">手机号：</span>
+								<div class="tips_div">
+									<input class="inp_lon " type="text" placeholder="请输入您的手机号码" name="phone" id="_phone">
+									<span id="_phone_msg">
+									</span>
+								</div>  		
+								
+							</li>
+							<li class="layout">
+								<span class="shouj">设置密码：</span>
+								<div class="tips_div">
+									<input class="inp_lon " placeholder="请输入包含数字和字母的6-20位密码" type="password" name="password" id="_password">
+									<span id="_password_msg">
+									</span>
+								</div>
+							</li>
+							<li class="layout">
+								<span class="shouj">校验码：</span>
+								<div class="tips_div">              
+									<input class="inp_lon inp_sho" type="text" placeholder="请输入短信校验码" id="_authCode" name="authCode">
+									<input class="inp_get gradual" type="button" id="get_authCode" value="获取短信校验码">
+									
+								</div>
+								<span id="_authCode_msg"></span>
+								<span class="pi_shouj_re pi_remark">
+								  <i class="icon_new pi_tip"></i>
+									校验码已发送至您的手机，请查收 <a class="remark_r "><i class="icon round"></i>收不到短信？</a>
+								</span>
+							</li>
+							
+							
+							<li class="all_li">
+								<div class="fl">
+									<input class="icon_inp checkbox mar_cen" id="agree" checked="checked" type="checkbox">
+									<i class="icon icon_gra icon_blu"></i>
+									<span class="mar_cen dt_sp">我已阅读并同意</span>
+								</div>
+								<a class="all_a" href="javascript:void(0);">《华人医生网用户许可协议》</a>
+							</li>
+							<li class="all_btn gradual">
+							   <input type="hidden" name="agree" value="1">
+		                       <input class="btn gradual" type="button" value="同意协议并注册" id="regis-btn" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;zhuce&#39;, &#39;tijiao&#39;);" name="regis-btn">
+							</li>
+							
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div id="open-dlg-register" class="open-dlg-notice" style="display:none;">
+		<div class="dialog_w400">
+			<p class="textmsg red" id="unphone_msg" style="display:none;"></p>
+			<table class="dialog_t_register fl" width="100%" border="0">
+	          <tbody><tr>
+	            <td height="30" align="right" width="80">手机号码：</td>
+	            <td><input id="unphone" name="unphone" class="loginFormTdIpt t_140" style="position:static;" type="text" onkeyup="value=value.replace(/[^\d]/ig,&#39;&#39;)" maxlength="11">
+				<input class="btn_get get_code" id="getcheckcode" type="button" value="获取验证码"></td>
+	          </tr>
+	          <tr>
+	            <td height="30" align="right">验证码：</td>
+	            <td><input class="loginFormTdIpt sel_4" style="position:static;" id="checkcode" name="checkcode" type="text" maxlength="6"></td>
+	          </tr>
+	          <tr>
+	            <td height="30">&nbsp;</td>
+	            <td><input class="btn_green" id="unaction" type="button" value="解 绑"></td>
+	          </tr>
+	        </tbody></table>
+	    </div>
+	</div>
+
+<script type="text/javascript" src="/signup/user.js"></script>
+<script type="text/javascript" src="/signup/nykj.js"></script>
+<script type="text/javascript" src="/signup/common.js"></script>
+
+<script type="text/javascript" src="/signup/jquery.tab.js"></script>
+<script>
+var _default_v4_path_="http://static.91160.com/usercenter/";
+var _default_img_path_="http://static.91160.com/usercenter/style";
+var _hash_input_name = "G6KzNi5PtJLF1q";
+var _hash_input_value = "eaf2dcf884c511f7f4fbc6fcd221847a";
+
+</script>
+<script type="text/javascript" src="/signup/v3_common.js"></script>
+<link rel="stylesheet" href="/signup/default.css"><script type="text/javascript" src="/signup/artDialog.js"></script>
+<script>
+        $('.tab-hd-d').tab({
+            tabTrigger: '.tab-trigger-d',
+            activeStyle: 'is-tab-trigger-d_on',
+            initialIndex: $('#tabNum').val(),
+            event: 'click.tab'
+          });
+        $(function(){
+            $('#regis-btn').click(function(){
+            	if($('#agree').attr('checked') !='checked'){return  false;}
+                })
+            });
+
+       
+       
+    </script>	<div class="dialog dialogaree no_blo" style="display: none;">
+		<div class="dialog_back"></div>
+		<div class="dialog_agreement">
+			<div class="agreement_back"></div>
+			<div class="agreement_content">
+				<div class="agreement_nav">
+					
+					<h2 class="agreement_nav_h fl">华人医生用户协议</h2>
+					
+					<i class="icon cancel"></i>
+				</div>
+				<div class="agreement_text">
+					<textarea>欢迎使用就华人医生网，本许可协议在用户使用华人医生网服务之前签署。在签署本协
+议之前，代表用户已经完全了解、知悉、接受和遵守本服务协议的全部内容。如果用户对本协议的任何条款表示异议，可以选择不使用华人医生网服务。
+1. 用户
+1.1. 用户资格
+用户必须是中国法律规定的具备完全民事权利能力和行为能力的自然人，或者是具有合法经营资格的实体组织。
+1.2. 用户注册
+“用户注册”是指用户登陆华人医生网，并按要求填写相关信息并确认同意履行相关用户协议的过程。
+若用户注册成为华人医生的会员，用户必须接受如下的约定：
+1. 申请会员时，用户应当提供真实、准确、即时、完整及有效的注册信息，保证不以他人资料在华人医生网进行注册或认证;
+2. 维护并及时更新注册信息以保持其真实、准确、即时、完整及有效。若用户提供的信息不真实、不准确、不完整，华人医生网有权暂停或终止会员服务。
+1.3. 用户权利
+用户拥有在华人医生网上使用自行注册的用户名和密码之权利，但不得以任何形式擅自转让或授权他人使用自己的华人医生网账号。用户如发现其他用户有违法或违反本服务协议的行为，可以向华人医生网进行反映和要求处理。
+					</textarea>
+				</div>
+				<div class="agreement_btn">
+					<input class="agreement_btn_inp gradual" type="button" value="同意并继续注册">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dialog dialoghelp no_blo" style="display: none;">
+		<div class="dialog_back"></div>
+		<div class="dialog_help">
+			<div class="help_back"></div>
+			<div class="help_content">
+				<div class="cancel_pst">
+					<i class="icon cancel"></i>
+				</div>
+				<div class="help_tips">
+					<i class="icon tips_icon fl"></i>
+					<div class="tips_content fl">
+						<p class="tips_con_one">收不到短信？</p>
+						<p class="tips_con_second">您可能存在以下问题：</p>
+						<ul class="tips_con_ul">
+							<li>1、网络通讯异常可能造成短信丢失，请重新发送短信</li>
+							<li>2、请核实手机是否已欠费停机，或者屏蔽了系统短信</li>
+						</ul>
+					</div>
+				</div>
+				<div class="help_other">
+					<span>您也可用需要注册的手机拨打客服热线<a href="" class="phone_num"><i class="icon phone"></i>400-11-91160</a>人工注册</span>
+				</div>
+				<div class="help_btn">
+					<input class="help_btn_inp gradual" type="button" value="我知道了">
+				</div>
+			</div>		
+		</div>
+	</div>
+	<script type="text/javascript" src="/signup/reg.js"></script>
+

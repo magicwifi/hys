@@ -1,0 +1,309 @@
+@font-face {font-family: "uicalendariconfont";
+  src: url('http://i1.hdfimg.com/doctorzone/css/font/iconfont.eot'); 
+  src: url('http://i1.hdfimg.com/doctorzone/css/font/iconfont.eot?#iefix') format('embedded-opentype'), 
+  url('http://i1.hdfimg.com/doctorzone/css/font/iconfont.woff') format('woff'), 
+  url('http://i1.hdfimg.com/doctorzone/css/font/iconfont.ttf') format('truetype'),
+  url('http://i1.hdfimg.com/doctorzone/css/font/iconfont.svg#iconfont') format('svg'); 
+}
+
+.ui-calendar-iconfont {
+  font-family:"uicalendariconfont" !important;
+  font-size:40px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-rili:before { content: "\e603"; }
+.icon-right:before { content: "\e600"; }
+.icon-left:before { content: "\e601"; }
+
+.ui-calendar {
+    font-size: 12px;
+    font-family: Helvetica, 'Microsoft Yahei', '微软雅黑', arial, 'Hiragino Sans GB', sans-serif;
+    position: relative;
+    border: 1px solid #ddd;
+    height: 30px;
+    width: 250px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.ui-calendar-wapper .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.ui-calendar-wapper .clearfix{*+height:1%;}
+
+.ui-calendar input {
+    width: 180px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    line-height:30px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.ui-calendar-label {
+    height: 30px;
+    padding: 0 10px;
+    color: #ccc;
+    line-height: 30px;
+    _height: 32px;
+    position: absolute;
+    right: 50px;
+    _line-height: 32px;
+}
+.ui-calendar-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    _height: 32px;
+    width: 50px;
+    text-align: center;
+    background: #efefef;
+    border-left: 1px solid #ddd;
+    cursor: pointer;
+    line-height: 30px;
+    _line-height: 32px;
+}
+.ui-calendar-icon i {
+    font-size: 22px;
+    color: #999;
+}
+
+.ui-calendar-wapper {
+    font-size: 12px;
+    font-family: Helvetica, 'Microsoft Yahei', '微软雅黑', arial, 'Hiragino Sans GB', sans-serif;
+    position: absolute;
+    border: 1px solid #ddd;
+    padding: 20px 0 5px 10px;
+    display: none;
+    z-index: 1102;
+    background: #fff;
+    width: 490px;
+}
+.ui-calendar-wapper-single {
+    width: 280px;
+}
+.ui-calendar-con {
+    position: relative;
+    padding-bottom: 10px;
+}
+.ui-calendar-wapper .slide-btn {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    cursor: pointer;
+    top: 70px;
+    line-height: 60px;
+    text-align: center;
+    overflow: hidden;
+    color: #ddd;
+}
+.ui-calendar-wapper .slide-btn:hover {
+    color: #999;
+}
+.ui-calendar-wapper .slide-btn-left {
+    left: 0;
+}
+.ui-calendar-wapper .slide-btn-right {
+    right: 10px;
+}
+.ui-calendar-wapper .slide-btn-right i {
+    margin-left: -10px;
+}
+.ui-calendar-nav {
+    height: 25px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.ui-calendar-nav span {
+    float: left;
+    width: 25px;
+    height: 25px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 1px;
+}
+.ui-calendar-nav strong {
+    color: #fc6700;
+}
+.ui-calendar-main {
+    clear: both;
+    margin: 0;
+    width: 190px;
+}
+.ui-calendar-header {
+    text-align: center;
+    position: relative;
+    top: -10px;
+    zoom: 1;
+    margin-bottom: -5px;
+}
+.ui-calendar-header span.ui-calendar-item-label {
+    position: absolute;
+    right: 0;
+    color: #ccc;
+}
+.ui-calendar-header span.ui-calendar-item-year {
+    position: absolute;
+    left: 0;
+}
+.ui-calendar-header em {
+    font-style: normal;
+    color: #fc6700;
+}
+.ui-calendar-main a {
+  float: left;
+  width: 25px;
+  height: 22px;
+  line-height: 22px;
+  color: blue;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  margin: 1px;
+}
+.ui-calendar-main a:hover {
+    background: #ccc;
+    color: #fff;
+}
+.ui-calendar-main a.selected {
+    background: #fc6700;
+    color: #fff;
+}
+.ui-calendar-main a.disabled {
+    color: #b5b5b5;
+    background: #fff;
+}
+.ui-calendar-item {
+    float: left;
+    width: 230px;
+}
+.ui-calendar-item-left .ui-calendar-nav {
+    padding-left: 40px;
+}
+.ui-calendar-item-left .ui-calendar-main {
+    padding-left: 40px;
+}
+.ui-calendar-item-right {
+    border-left: 1px solid #ddd;
+    margin-left:10px;
+    padding-left:10px;
+}
+.ui-calendar-item-single {
+    width: 270px;
+}
+.ui-calendar-item-single .ui-calendar-main {
+    padding-left: 40px; 
+}
+.ui-calendar-item-single .ui-calendar-nav {
+    padding-left: 40px; 
+    width: 230px;
+}
+.ui-calendar-pannel {
+    width: 480px;
+    background: #f0f0f0;
+    font-size: 0;
+}
+.ui-calendar-pannel-single {
+    width: 270px;
+}
+.ui-calendar-pannel-year {
+    float: left;
+    width: 60px;
+    padding: 5px 10px 5px 10px;
+}
+.ui-calendar-pannel-item {
+    font-size: 12px;
+    width: 460px;
+}
+.ui-calendar-pannel-year span {
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: #bfbfbf;
+    color: #fff;
+}
+.ui-calendar-pannel-month {
+    float: left;
+    width: 380px;
+}
+
+.ui-calendar-pannel-month-single {
+    width: 170px;
+}
+
+.ui-calendar-pannel-month-name {
+    float: left;
+    width: 60px;
+}
+.ui-calendar-pannel-month-item {
+    padding: 5px 0;
+}
+.ui-calendar-pannel-month-name span {
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background: #bfbfbf;
+    color: #fff;
+}
+.ui-calendar-pannel-dates {
+    float: left;
+    width: 320px;
+}
+.ui-calendar-pannel-dates-single {
+    width: 110px;
+}
+.ui-calendar-pannel-dates span {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #999;
+}
+.ui-calendar-btns {
+    text-align: center;
+    padding: 15px 0;
+    background: #fff;
+}
+.ui-calendar-btns span {
+    display: inline-block;
+    width: 80px;
+    padding: 6px 0;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.ui-calendar-cancel {
+    background: #999;
+    color: #fff;
+}
+.ui-calendar-cancel:hover {
+    background: #aaa;
+}
+.ui-calendar-sure {
+    background: #00c717;
+    color: #fff;
+}
+.ui-calendar-sure:hover {
+    background: #04a90e;
+}
+.ui-left-logo{
+    background: url("../images/calendar-left-btn.png") no-repeat bottom center;
+}
+.ui-right-logo{
+    background: url("../images/calendar-right-btn.png") no-repeat bottom center;
+

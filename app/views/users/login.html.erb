@@ -1,0 +1,64 @@
+<div class="single-form-container">
+  <div class="boxed-group" id="login_d">
+    <h3><%= t('login') %></h3>
+    <div class="boxed-group-inner">
+      <%= form_tag "/create_login_session" ,:id=>"loginFrom" do %>
+        <dl class="form">
+          <dt>
+          <%= label_tag :login, t('username') %>
+          </dt>
+          <dd>
+          <%= text_field_tag :login, params[:login], :class => "short" %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= label_tag :password, t('password') %>
+          </dt>
+          <dd>
+          <%= password_field_tag :password, params[:password], :class => "short" %>
+          </dd>
+        </dl>
+        <p>
+          <a href="/signup"><%= t('signup') %></a>
+          <%= link_to t('forgot_password'), new_password_reset_path %>
+        </p>
+        <p> <input class="button" name="commit" onclick="formSubmit()" type="button" value="登录"> </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+function JYUrl(cName,aName,args, domain){
+    var hostName = domain || location.hostname;
+    var sUrl = "http://"+hostName+":"+location.port+"/"+cName+"/"+aName;
+    if(args!=undefined){
+            for(k in args){
+                    sUrl += "/"+k+"-"+args[k];
+            }
+    }
+    return (sUrl+".html").toLowerCase();
+}
+function formSubmit()
+{   var name=$("#login").val();
+    var password=$("#password").val();
+    var url=JYUrl('check', 'name');
+    $.ajax({
+	url:url,
+	data:{type:3,username:name,  password:password },
+	type:'post',
+	dataType:'json',
+	async:false, 
+	success:(function(de){
+		_login_state = 1;
+		if(de.code < 0){
+                        alert(de.msg);
+                        return false;
+		}else{
+			 document.getElementById("loginFrom").submit();
+							}
+	})
+   });
+    
+}
+</script> 

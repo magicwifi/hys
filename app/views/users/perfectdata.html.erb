@@ -1,0 +1,123 @@
+<link rel="stylesheet" type="text/css" href="/signup/global_about.css">
+<link rel="stylesheet" type="text/css" href="/signup/style.css">
+<script async="" src="/signup/analytics.js"></script>
+<script src="/signup/hm.js"></script>
+<script type="text/javascript" src="/signup/jquery-1.9.1.min.js"></script>
+
+<div class="bg_gray bo fu_pa">
+		<div class="vi_main center bg_white w1000 ">
+			<div class="fc_banner">
+				<div class="fc_banner_outline">
+					<h2 class="fc_banner_in fl">温馨提示!</h2>
+				</div>
+			</div>
+			<div class="content">
+				<div class="con_pd">
+				 <h3>您已经注册成功,为了便于管理您个人的病历信息，也为了您方便咨询医生诊断</h3>
+				 <h3>建议您登录后先进入"个人健康中心"填写个人病历资料!</h3>
+					<ul class="pa_ul">
+						<form action="./完善资料_files/完善资料.html" method="post" id="infoFrom" class="form">
+							<li id="_truenameCard_msg" style="display:none">
+							</li>
+                            
+							<li class="layout"  style="display:none">
+								<span class="shouj">真实姓名：</span>
+								<div class="tips_div">
+									<input class="inp_lon inp_gra inp_c" type="text" placeholder="请输入您的真实姓名" id="_truename" name="truename">
+									<span id="_truename_msg" class="wrong"><i class="icon jup"></i>真实姓名不能为空</span>
+								</div>
+									
+							</li>
+							<li class="layout"  style="display:none">
+								<span class="shouj">身份证号：</span>
+								<div class="tips_div">
+									<input class="inp_lon inp_gra inp_c" type="text" placeholder="请输入您的身份证号码" id="_card" name="card">
+									<span id="_card_msg">
+									   <span class="pi_shouj_re fl">
+    										<i class="icon_new pi_tip"></i>提交后将不可修改，请谨慎填写
+    									</span>
+									</span>
+								</div>
+								
+							</li>
+							<li class="layout"  style="display:none">
+								<span class="shouj">性别：</span>
+								<div class="tips_div">
+									<div class="pd_radio_ul">
+										<p class="pd_radio_li sex_radio_li fl">
+											<input class="pd_radio_a " type="radio" name="sex" value="0">
+											<i class="icon pd_radio_gra  "></i>
+											<span>男</span>
+										</p>
+										<p class="pd_radio_li sex_radio_li fl">
+											<input class="pd_radio_b pd_radio" type="radio" name="sex" value="1">
+											<i class="icon pd_radio_gra"></i>
+											<span>女</span>
+										</p>
+									</div>
+								</div>
+							</li>
+							 
+							<li class="layout">
+								<div class="layout_btn">
+								    <input type="hidden" name="_card_type" id="_card_type" value="1">
+								    <input type="hidden" name="birthDay" id="_birthDay" value="">
+									<!-- <input class="fl fv_next_btn bo_ra gradual" type="button" name="perfect-btn" id="perfect-btn" value="提交">
+									<input class="fl pi_inp_tim bo_ra gradual" onclick="location.href='/login';" type="button" value="下次再说">-->
+									<input class="fl fv_next_btn bo_ra gradual" onclick="location.href='/login';" type="button" value="登录">
+								</div>
+							</li>
+							<li class="pd_all_li " style="display:none">
+        						<i class="icon pd_icon_gra"></i>
+        						<a class="pd_all_a  pd_dt_sp" href="http://user.91160.com/perfect/foreign.html">非中国大陆户籍人士清点此完善资料 <i class="icon pd_icon_more"></i></a>
+        					</li>
+							<li class="why"  style="display:none">
+								<div class="why_one">
+									<i class="icon lamp"></i>
+					      			<span>为什么要填写真实姓名与身份证号？</span>
+								</div>
+								<div class="why_two">
+									<span>*在大部分医院，身份证是现场取号的重要凭证。真实有效的身份信息能更快捷高效的体验我们的服务。请您确认您的身份信息准确无误，一经<br>&nbsp;填写，将不可更改。</span>
+									<span>*请填写本人信息，需为家人预约，随后可将其信息添加到就诊人管理。</span>
+								</div>	
+							</li>
+						</form>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+<script type="text/javascript" src="/signup/user.js"></script>
+<script type="text/javascript" src="/signup/nykj.js"></script>
+<script type="text/javascript" src="/signup/common.js"></script>
+
+<script type="text/javascript" src="/signup/jquery.tab.js"></script>
+<script>
+var _default_v4_path_="http://static.91160.com/usercenter/";
+var _default_img_path_="http://static.91160.com/usercenter/style";
+var _hash_input_name = "G6KzNi5PtJLF1q";
+var _hash_input_value = "eaf2dcf884c511f7f4fbc6fcd221847a";
+
+</script>
+<script type="text/javascript" src="/signup/v3_common.js"></script>
+<link rel="stylesheet" href="/signup/default.css"><script type="text/javascript" src="/signup/artDialog.js"></script>
+<script>
+        $('.tab-hd-d').tab({
+            tabTrigger: '.tab-trigger-d',
+            activeStyle: 'is-tab-trigger-d_on',
+            initialIndex: $('#tabNum').val(),
+            event: 'click.tab'
+          });
+        $(function(){
+            $('#regis-btn').click(function(){
+            	if($('#agree').attr('checked') !='checked'){return  false;}
+                })
+            });
+
+       
+       
+    </script>	
+	<script type="text/javascript" src="/signup/reg.js"></script>
+

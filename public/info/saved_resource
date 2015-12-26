@@ -1,0 +1,117 @@
+var EC_SS_FUNCTION =1;
+var EC_CS_STATUS = new Object();
+EC_CS_STATUS["663502"] = '0';
+EC_CS_STATUS["663486"] = '1';
+EC_CS_STATUS["662362"] = '0';
+EC_CS_STATUS["740039"] = '0';
+EC_CS_STATUS["761770"] = '0';
+EC_CS_STATUS["765601"] = '0';
+EC_CS_STATUS["888895"] = '0';
+EC_CS_STATUS["904103"] = '0';
+EC_CS_STATUS["1109656"] = '0';
+EC_CS_STATUS["1166627"] = '0';
+EC_CS_STATUS["1293563"] = '0';
+EC_CS_STATUS["1334503"] = '1';
+var EC_PC_STATUS = new Object();
+EC_PC_STATUS["663486"] = '1';
+EC_PC_STATUS["1334503"] = '1';
+var EC_CS_FOLDER='cl/v4010_8/';
+if(typeof window.EC_CS_LOADED=="undefined"){
+	var EC_CS_SSL = 0; ("https:" == document.location.protocol) && (EC_CS_SSL = 1);
+	var EC_CS_Protocol = (EC_CS_SSL == 1? "https://": "http://");
+	var EC_CS_ISPREVIEW = '';					//预览标识
+	var EC_CS_OPEN = 1;										//在线客服标志
+	var EC_CS_ISPREVIEW = '0';
+	var EC_CS_PREVIEW = '';//在线客服预览
+	var EC_CS_GURL = encodeURIComponent(document.location.href);		//当前页面URL
+	var EC_CS_REFERRER = encodeURIComponent(document.referrer);		//来源页面URL
+	var EC_CS_DOCTYPE = document.firstChild.nodeValue;
+	var EC_CS_SERVER= EC_CS_Protocol + ((EC_CS_SSL == 1 )? "cs2.ecqun.com/" : "cs.ecqun.com/");
+	var EC_THUME_FOLDER='/themes/v4003';
+	var EC_VERSION='4.0.0.0';
+	var EC_CS_ID='662150';
+	
+	var EC_CS_THEME='-1';				//
+	var EC_CS_SHOWTITLE='宁远科技';				//标题头
+	var EC_CS_PICSKIN='-1'; 			//skin 0 蓝色 1红色 2绿色 3橙色 4红色
+	var EC_CS_FLOAT='1';  					//布局 0左 1右
+	var EC_CS_FIXED='0';  					//布局 固定
+	var EC_CS_LANG='0'; 					//0中文 1英文 2繁体
+	var EC_CS_SCHEME='0'; 					//第几套样式
+	var EC_CS_AUTO_HIDE='0'; 			//0不自动隐藏 1自动隐藏
+	
+	//辅助工具显示
+	var EC_AIDS_SHOWTYPE='0';		//横排竖排
+	var EC_AIDS_QQ='0';
+	var EC_AIDS_CRMQQ='0';
+	var EC_AIDS_SKYPE='0';
+	var EC_AIDS_YAHOO='0';
+	var EC_AIDS_ALIWW='0';
+	var EC_AIDS_ALIBB='0';
+	var EC_AIDS_ALIGJ='0';
+	var EC_AIDS_MSN='0'; 
+	
+	
+	var EC_CS_SHOW_STYLE='1'; 			//显示风格 0-列表 1-图片
+	var EC_CS_LIST_RAND='0'; 			//随机显示
+	var EC_CS_SHOW_PICON='/upload/cs/662150/0pic.jpg'; 				//在线图片
+	var EC_CS_SHOW_PICOFF='/upload/cs/662150/0picoff.gif'; 			//离线图片
+	var EC_CS_SHOW_PHONE='0'; 			//电话回拨开启
+	
+	var EC_CS_TOP='220';						//高度
+	var EC_CS_MARGIN='20';					//边距
+	var EC_CS_HIDEOFF='0';				//离线隐藏
+	var EC_CS_QQOPEN='0';				//QQ客服开启
+	var EC_CS_ALLSET = '[{"id":"77556","name":"\u5728\u7ebf\u5ba2\u670d","expand":"0","item":[{"f_cs_id":"663502","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d 8026","f_group_id":"77556","f_name":"\u4f9d\u4f9d 8026","f_title":"\u5ba2\u670d\u4e13\u5458","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"1","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"1","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"1"},{"f_cs_id":"663486","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8005","f_group_id":"77556","f_name":"\u4f9d\u4f9d8005","f_title":"\u5ba2\u670d\u7ec4\u957f","f_qq":"","f_scheme":"0","f_mobile":"13632623197","f_show_qq":"1","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"2","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"1"},{"f_cs_id":"662362","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d0001","f_group_id":"77556","f_name":"\u4f9d\u4f9d0001","f_title":"\u7ecf\u7406","f_qq":"","f_scheme":"0","f_mobile":"13480153557","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"3","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"0","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"740039","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8028","f_group_id":"77556","f_name":"\u4f9d\u4f9d8028","f_title":"\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"4","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"0","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"761770","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8030","f_group_id":"77556","f_name":"\u4f9d\u4f9d8030","f_title":"\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"5","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"765601","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8031","f_group_id":"77556","f_name":"\u4f9d\u4f9d8031","f_title":"\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"13610333478","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u5ba2\u670d","f_cs_mobile":"","f_position":"6","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"888895","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8035","f_group_id":"77556","f_name":"\u4f9d\u4f9d8035","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"7","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"904103","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8034","f_group_id":"77556","f_name":"\u4f9d\u4f9d8034","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"400-11-91160","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"8","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"1109656","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8033","f_group_id":"77556","f_name":"\u4f9d\u4f9d8033","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"9","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"1166627","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8036","f_group_id":"77556","f_name":"\u4f9d\u4f9d8036","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"10","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"1","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"1293563","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8037","f_group_id":"77556","f_name":"\u4f9d\u4f9d8037","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"11","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"0","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"},{"f_cs_id":"1334503","f_corp_id":"662150","f_valid":"1","f_show_mobile":"0","f_show_name":"\u4f9d\u4f9d8041","f_group_id":"77556","f_name":"\u4f9d\u4f9d8041","f_title":"\u7ebf\u4e0a\u5ba2\u670d","f_qq":"","f_scheme":"0","f_mobile":"","f_show_qq":"0","f_sms_online":"0","f_msn":"","f_show_msn":"0","f_email":"","f_tel":"","f_telno":"","f_show_tel":"0","f_contact":"\u7ebf\u4e0a\u5ba2\u670d","f_cs_mobile":"","f_position":"12","f_other1":"0","f_other2":"0","f_other_text1":"","f_other_text2":"","f_qq_first":"0","f_status":"0","f_aids_open":"0","f_aids_qq":"","f_aids_crmqq":"","f_aids_skype":"","f_aids_aliww":"","f_aids_yahoo":"","f_aids_msn":"","f_aids_alibaba":"","f_aids_alitrade":"","uqq":"0"}]}]';		 					//客服列表
+	var EC_CS_TRACK=''; 						//主动跟踪			
+	var EC_CS_TRACKID='';
+	var EC_CS_TRACKKEY='';
+	
+	var EC_CS_BTN_STYLE = '0';//按钮样式
+	var EC_CS_BTN_BG = "/themes/v4003/pic/blue";//邀请框按钮样式
+	var EC_CS_BTN_TXT = '';//按钮文字颜色
+	var EC_CS_THEME_CUS = '';//主题自定义图片
+	var EC_CS_THEME_CUS_MIN = '';//最小化自定义图片
+	
+	var EC_CS_LA_ENABLE= '0';//列表广告开启:1-开启，0-关闭
+	var EC_CS_LA_IMG = '/upload/cs/662150/0adsads.jpg';//列表广告图片
+	EC_CS_LA_IMG != '' && (EC_CS_LA_IMG += '?'+(new Date()).getTime());
+	var EC_CS_LA_IMGLINK = 'http://www.91160.com';//列表广告图片链接地址
+	
+	var EC_CS_BBTN_BG = "/themes/v4003/fad/default";//邀请框按钮样式
+	var EC_CS_BTHEME='-1';				//
+	var EC_CS_DIALOG_TITLE='宁远科技'; 	//主动标题
+	var EC_CS_ENABLE_TITLE='1'; 	//主动标题
+	var EC_CS_DIALOG_CONTENT='你好欢迎来到我们的网站!请问有什么可以帮助您的？'; //主动会话内容
+	var EC_CS_ENABLE_CONTENT='1'; //主动会话内容
+	var EC_CS_DIALOG='0';				//0 不主动会话 1 主动会话
+	var EC_CS_DIALOG_TIME='5';			//0 主动会话窗口延迟时间
+	var EC_CS_BBTN_STYLE = '0';//邀请框按钮样式
+	var EC_CS_BBTN_TXT = '#333333';//邀请框按钮文字颜色
+	var EC_CS_BTHEME_CUS = '';//邀请框主题自定义图片
+	EC_CS_BTHEME_CUS != '' && (EC_CS_BTHEME_CUS += '?'+(new Date()).getTime());
+	var EC_CS_DIALOG_POSITION='0';//邀请框显示位置(0居中,1右下角)
+	var EC_CS_BA_ENABLE= 0;//'0';//邀请框广告开启:1-开启，0-关闭
+	var EC_CS_BA_IMG = '';//邀请框广告图片
+	var EC_CS_BA_IMGLINK = '';//邀请框广告图片链接地址
+	var EC_CS_BA_BCOLOR='#1bb1d6';//邀请框广告边框颜色
+	
+	var EC_CS_SKIN_STYLE;
+			EC_CS_SKIN_STYLE = -1;//自定义
+		//邀请框
+	var EC_CS_BOX_STYLE;
+			EC_CS_BOX_STYLE = -1;//自定义
+		
+	var EC_CS_BOX_FACE 		= '0';
+	var EC_CS_BOX_FACE_URL	= EC_CS_SERVER+ '';
+	
+	
+	
+	function ec_initJS(b,a){var s=document.createElement("script");s.type="text/javascript";s.charset=typeof(a)!="undefined"?a:"utf-8";s.src=b;document.getElementsByTagName("head").item(0).appendChild(s)}
+	
+	if(EC_CS_OPEN==1&&typeof window.EC_CS_LOADED=="undefined"){
+		window.EC_CS_LOADED=1;
+		ec_initJS(EC_CS_SERVER+EC_CS_FOLDER+"/c.js");
+	}
+	
+}

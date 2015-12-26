@@ -1,0 +1,18 @@
+.submit_btn_big2{background: #36cb2b; border: 1px solid #3bc131; border-radius: 2px; color: #fff; cursor: pointer; display: inline-block; font-family: \5FAE\8F6F\96C5\9ED1; vertical-align: middle; padding: 5px 30px; }
+.submit_btn_big2:hover{background: #36b12d; border: 1px solid 31a828; }
+.space_doc_bind_helper{ font-size: 14px;}
+.space_doc_bind_helper li{ height: 48px; line-height: 48px; border-bottom: 1px dotted #b2b2b2;}
+.space_doc_bind_helper .tit{ font-size: 16px; font-weight: bold; margin-top: 20px;}
+.space_doc_bind_helper .tit span{ padding: 0 5px; color: #3c980b;}
+.space_doc_bind_helper li .r_con{ padding-left: 30px;}
+
+.space_doc_bind_dialog{ width: 380px; font-size: 14px;}
+.space_doc_bind_dialog .d_b_tit{ height: 32px; line-height: 32px; background: #f6f6f6; padding: 0 10px;}
+.space_doc_bind_dialog .d_b_tit b{ font-weight: bold;}
+.space_doc_bind_dialog .d_b_tit span{ color: #e76049;}
+.space_doc_bind_dialog .d_b_con{ padding: 20px; line-height: 1.8;}
+.space_doc_bind_dialog .d_b_btn{ text-align: center; margin-top: 20px;}
+.space_doc_bind_dialog .d_b_btn .ok{ background: #30c76c; border: 1px solid #08a95d; border-radius: 3px; color: #FFF; padding: 4px 30px; margin: 0 10px;}
+.space_doc_bind_dialog .d_b_btn .ok:hover{ background: #1db559; border: 1px solid #007e43;}
+.space_doc_bind_dialog .d_b_btn .cancel{ background: #ccc; border: 1px solid #bbb; border-radius: 3px; color: #FFF; padding: 4px 30px; margin: 0 10px;}
+.space_doc_bind_dialog .d_b_btn .cancel:hover{ background: #aaa; border: 1px solid #999;};

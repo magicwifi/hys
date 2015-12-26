@@ -1,0 +1,200 @@
+<div class="area mb30 layout">
+      <div class="comm_left_main w650 fl">
+              <div class="comm_con w650 layout" id="thks_bind_id">
+          <div class="function_bar" style="display:none">
+            <div class="fun_chose fs12 fl">
+            </div>
+            <div class="fun_ico fs12 fl">
+              <ul>
+                <li class="cur"><a href="">预约人次</a></li>
+               <!--  <li><a href="javascript:void(0);">评分</a></li> -->
+              </ul>
+            </div>
+              <div class="pages_ta fs12 fr">
+              <div class="fl pages_ta_mun" style="display:none">共 <strong>38</strong> 个医生</div>
+              <div class="pages_mun fr" style="display:none">
+              <a id="prev_page" class="prev_page_a" href="javascript:void(0);" title="上一页" style="color:#818181;"></a>
+              <a id="next_page" class="next_page_a" href="javascript:void(0);" title="下一页"></a>
+              1/383
+              </div>
+              </div>
+          </div>
+          <div class="search_list layout">
+            <% if @doctors.size <1 %>
+            <h2 style="font-size: 22px;color: #FF0000;">没有找到医生</h2>
+            <% end %>
+            <ul>
+                 <% @doctors.each do |doctor| %>
+                                                   <li class="search_item docter_item">
+                <div class="left_img_big">
+                <% if doctor.avatar.include? "http" %> 
+		<a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>&usedId=<%= @userid%>&username=<%= @username%>&message=<%= @unread_count %>&neworsubmit=<%= @neworsubmit %>"><img oncontextmenu="return(false);" src="<%= doctor.avatar%>"></a>
+                <% else %> 
+		<a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>&usedId=<%= @userid%>&username=<%= @username%>&message=<%= @unread_count %>&neworsubmit=<%= @neworsubmit %>"><img oncontextmenu="return(false);" src="../<%= doctor.avatar%>"></a>
+                <% end %>
+                </div>
+                <div class="right_mun">已预约人次 <strong>24</strong></div>
+                <div class="right_btn"><a class="add_book patch-float-margin " type="1" docid="100001809" href="javascript:void(0);">收藏</a> <em>|</em> 
+                <a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>&usedId=<%= @userid%>&username=<%= @username%>&message=<%= @unread_count %>&neworsubmit=<%= @neworsubmit %>" class="addCom" docid="100001809" depid="100000711" ds="0" img="http://images.91160.com/upload/2912/doctor/1/doctor_100001809.jpg" uid="100000788" cid="2912" type="1" doctor_name="李玉" zcname="" unit_name="中国人民解放军第三0二医院" dep_name="肿瘤放射治疗中心">点评</a></div>
+                <div class="doc_info fl">
+                <h2><a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>&usedId=<%= @userid%>&username=<%= @username%>&message=<%= @unread_count %>&neworsubmit=<%= @neworsubmit %>" title="<%= doctor.name %>"><%= doctor.name %> </a><span><%= doctor.rank %> </span> </h2>
+                <div class="h_info layout">
+                <p> <%= doctor.hospital %> <br><%= doctor.room %></p>
+                </div>
+                <div class="doc_sbtn">
+                <ul class="fun_btn_ul layout" style="display:none">
+                  <li class="gh_ico" title="可预约"><a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>&usedId=<%= @userid%>&username=<%= @username%>&message=<%= @unread_count %>&neworsubmit=<%= @neworsubmit %>" title="预约">预约</a></li>
+                  <li class="zx_ico_no" title="可咨询"><a href="/hryisheng/doctor.action?id=<%=doctor.doctor_id%>" title="咨询">咨询</a></li>
+                  <li class="zz_ico_no" title="可加号"><a href="javascript:void(0);" title="加号">加号</a></li>
+                  <li class="vip_ico_no" title="私人医生"><a href="javascript:void(0);" title="私人医生">私人医生</a></li>
+                </ul>
+                </div>
+                </div>
+                <div class="doc_expert_in fs14 fl">
+                <%= doctor.speciality %></div>
+                <div class="doc_score fl">
+                  <span class="score_mun fs14"></span>
+                                    <span class="dp_links fs12"><a href="javascript:void(0);"></a></span>
+                </div>
+              </li>
+              <% end %>
+                         </ul>
+            <div class="pages_wrap layout" style="display:none">
+             <div class="pages"><p id="s_pager" class="page"><!--共 <strong> 2 </strong> 条记录&nbsp;--><strong>1</strong> <a href="" style="display:none">2</a> ...<a href="" class="n" style="display:none">383</a><a href="#" class="n">下一页</a><a href="" class="n">末页</a></p></div>            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side w280 fr" style="display:none">
+          
+                    
+          
+          
+              <!-- 推荐医生 start -->
+<!--      <div class="layout rec_doc ">
+        <div class="lord_hd layout pt0">
+            <h1 class="lord_title">推荐医生
+            </h1>
+            <a href="http://www.91160.com/search/doctor.html" class="more fr">更多&gt;</a>
+        </div>
+        <div class="">
+         <ul>
+                             
+             </ul>
+        </div>
+      </div>-->
+        <!-- 推荐医生 end -->
+      <div class="lord_hd layout pt0 mb25">
+      <div class="b_advs">
+        <a href="">
+          <img src="/160files/ads_280x160_3.jpg" width="280" height="160"></a>
+      </div>
+      </div>
+        <div class="hot-doctor mb30 ie6pb30 layout mb25">
+          <div class="lord_hd layout">
+            <h1 class="lord_title">一周点评热门</h1>
+            <!-- <span class="week-sis fs12 fr">（周排名）</span>
+          -->
+        </div>
+        <div class="hdoctor_list" style="display: block;">
+          <ul>                    <!-- 过滤新兴医院 -->
+                      <li>
+              <h3><a class="fs14" href="http://www.91160.com/doctors/index/docid-100191088.html">胡炜</a></h3>
+              <p><a class="fs12" href="http://www.91160.com/unit/show/uid-100000805.html">北京大学口腔医院</a></p>
+              <p><a class="fs12" href="http://www.91160.com/dep/show/depid-100072835.html">口腔正畸科</a></p>
+              <div class="d-pic">
+                <a href="http://www.91160.com/doctors/index/docid-100191088.html">
+                  <img oncontextmenu="return(false);" src="/160files/m_0_small.jpg" width="48" height="58" alt="胡炜"></a>
+              </div>
+              <div class="d-pm">
+                <span>1</span>
+                <p>3</p>
+              </div>
+            </li>                                 <!-- 过滤新兴医院 -->
+                      <li>
+              <h3><a class="fs14" href="http://www.91160.com/doctors/index/docid-100188891.html">冷金花</a></h3>
+              <p><a class="fs12" href="http://www.91160.com/unit/show/uid-100000766.html">北京协和医院西院</a></p>
+              <p><a class="fs12" href="http://www.91160.com/dep/show/depid-100072278.html">妇产科</a></p>
+              <div class="d-pic">
+                <a href="http://www.91160.com/doctors/index/docid-100188891.html">
+                  <img oncontextmenu="return(false);" src="/160files/doctor_100188891_201411302354.jpg" width="48" height="58" alt="冷金花"></a>
+              </div>
+              <div class="d-pm">
+                <span>2</span>
+                <p>2</p>
+              </div>
+            </li>                                 <!-- 过滤新兴医院 -->
+                      <li>
+              <h3><a class="fs14" href="http://www.91160.com/doctors/index/docid-100188281.html">韩凯</a></h3>
+              <p><a class="fs12" href="http://www.91160.com/unit/show/uid-100000766.html">北京协和医院西院</a></p>
+              <p><a class="fs12" href="http://www.91160.com/dep/show/depid-100072270.html">基本外科</a></p>
+              <div class="d-pic">
+                <a href="http://www.91160.com/doctors/index/docid-100188281.html">
+                  <img oncontextmenu="return(false);" src="/160files/doctor_100188281_201411272305.jpg" width="48" height="58" alt="韩凯"></a>
+              </div>
+              <div class="d-pm">
+                <span>3</span>
+                <p>2</p>
+              </div>
+            </li>                                 <!-- 过滤新兴医院 -->
+                      <li>
+              <h3><a class="fs14" href="http://www.91160.com/doctors/index/docid-100190378.html">吴楠</a></h3>
+              <p><a class="fs12" href="http://www.91160.com/unit/show/uid-100000888.html">中国人民解放军北京军区总医院</a></p>
+              <p><a class="fs12" href="http://www.91160.com/dep/show/depid-100072303.html">妇产科</a></p>
+              <div class="d-pic">
+                <a href="http://www.91160.com/doctors/index/docid-100190378.html">
+                  <img oncontextmenu="return(false);" src="/160files/doctor_100190378_201412101518.jpg" width="48" height="58" alt="吴楠"></a>
+              </div>
+              <div class="d-pm">
+                <span>4</span>
+                <p>2</p>
+              </div>
+            </li>                                 <!-- 过滤新兴医院 -->
+                      <li>
+              <h3><a class="fs14" href="http://www.91160.com/doctors/index/docid-100188884.html">刘珠凤</a></h3>
+              <p><a class="fs12" href="http://www.91160.com/unit/show/uid-100000766.html">北京协和医院西院</a></p>
+              <p><a class="fs12" href="http://www.91160.com/dep/show/depid-100072278.html">妇产科</a></p>
+              <div class="d-pic">
+                <a href="http://www.91160.com/doctors/index/docid-100188884.html">
+                  <img oncontextmenu="return(false);" src="/160files/doctor_100188884_201411302344.jpg" width="48" height="58" alt="刘珠凤"></a>
+              </div>
+              <div class="d-pm">
+                <span>5</span>
+                <p>2</p>
+              </div>
+            </li>                                 <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               <!-- 过滤新兴医院 -->
+                               </ul>
+        </div>
+      </div>
+       <div class="fr w280">
+      	        <div class="layout pt0 mb20">
+            <div class="b_advs">
+                <a href="http://www.91160.com/health/interview/catid-7.html" target="_blank"><img src="/160files/2015060914372438734.jpg"></a>
+            </div>
+        </div>
+      </div>
+          </div>
+    </div>

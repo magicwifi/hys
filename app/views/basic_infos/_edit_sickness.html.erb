@@ -1,0 +1,123 @@
+<script>
+  jQuery(function($) {
+    var updateVideoForm;
+    updateVideoForm = $("form#update-video-uploader");
+    if (updateVideoForm.length > 0) {
+      updateVideoForm.QiniuUploader({
+        autoUpload: true,
+        removeProgressBarWhenCompleted: true,
+        onFilesAdd: function(file) {
+          types = /(\.|\/)(doc|docx|jpg|png|mov|mp4)$/i;
+          if (types.test(file.type) || types.test(file.name)) {
+            if (file.size > 100000000) {
+              alert("上传失败：" + file.name + " 病历太大，超过100M");
+              return false;
+            } else {
+              return true;
+            }
+          } else {
+            alert("上传失败：" + file.name + " 病历格式错误，请上传mov或mp4文件");
+            return false;
+          }
+        }
+      });
+      updateVideoForm.bind("qiniu_upload_start", function(e) {
+        $('#submit_sickness_info').attr('value', '病历正在上传');
+        $('#submit_sickness_info').attr('disabled', 'true');
+        $('a.fileupload-btn').bind('click', false);
+      });
+      updateVideoForm.bind("qiniu_upload_complete", function(e, data) {
+        $('#submit_sickness_info').attr('value', '保存病历信息');
+        $('#submit_sickness_info').removeAttr('disabled');
+        $('#progress-text').html("病历上传成功！");
+        $('#video-filename').html("病历文件名： " + "<strong>" + data.fname + "</strong>");
+      });
+    }
+  });
+$(document).ready(function(){
+
+	var i18n = { // 本地化
+		previousMonth	: '上个月',
+		nextMonth		: '下个月',
+		months			: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+		weekdays		: ['周日','周一','周二','周三','周四','周五','周六'],
+		weekdaysShort	: ['日','一','二','三','四','五','六']
+	}
+
+	var datepicker = new Pikaday({ 
+		field:		jQuery('#datepicker')[0],  
+		minDate:	new Date('1980-01-01'), 
+		maxDate:	new Date('2020-12-31'), 
+		yearRange:	[1980,2020],
+		i18n: 		i18n,
+		onSelect: 	function() {
+			var date = document.createTextNode(this.getMoment().format('YYYY-MM-DD') + ' '); //生成的时间格式化成 2013-09-25
+			$('#datepicker').append(date);
+		}
+	});
+
+$('input#submit_sickness_info1').click(function(){
+	$('form.edit_sickness').submit();
+});
+});
+</script>
+<div class="add-video-box clearfix">
+  <div class="primary-info">
+    <%= form_for(sickness,:remote=>true) do |f| %>
+      <dl class="form">
+        <dt>
+          <%= f.hidden_field :id %>
+          <%= f.label '病历标题' %>&nbsp;&nbsp;&nbsp;&nbsp;如: 一次冠心病检查 
+        </dt>
+        <dd><%= f.text_field :title, id: "video-title" %></dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label '症状简要描述' %>&nbsp;&nbsp;&nbsp;&nbsp;如: 快走时胸闷、胸痛10年,加重1周</dt>
+        <dd>
+          <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+        </dd>
+      </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '看病日期' %>
+          </dt>
+          <dd>
+          <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"  %>
+          </dd>
+        </dl>
+      <dl class="form">
+        <dt><label>更新病历资料(图片或word)</label></dt>
+       <dl>
+    <% end %>
+  </div>
+  <div class="secondary-info">
+    <p id="video-filename">查看文件: <a href="#" onClick="window.open('<%= sickness.asset.nil? ? "#":"http://"+Settings.qiniu.bucket_domain+"/"+sickness.asset %>','newwindow','height=500,width=611,scrollbars=yes,status=yes,screenX=400,screenY=400')" ><%= sickness.filename %></a></p>
+    <%= qiniu_video_uploader_form callback_url: "/update_sickness/#{sickness.id}",
+      callback_method: 'PATCH',
+      bucket:        "#{Settings.qiniu.bucket}",
+      id:            'update-video-uploader',
+      progress_bar_id: 'progress-bar' do %>
+        <input id="fileupload" name="file" type="file">
+      <div class="bar" id="progress-bar"></div>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        {%=o.name%}
+        <div class="progress">
+          <span id="progress-text">病历正在上传...</span>
+          <div class="bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </script>
+  <div class="third-info"></div>
+      <div class="video-button-group">
+<input class="button primary" data-disable-with="保存中..." id="submit_sickness_info1" name="commit" type="submit" value="保存病历信息">
+  <div class="video-delete-btn">
+    <%= link_to "删除本病历", sickness, :method => "delete", class: "danger minibutton",
+      :confirm => t('confirm_delete') %>
+      </div>
+  </div>
+  <div class="info-message"></div>
+  </div>
+</div>

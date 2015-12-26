@@ -1,0 +1,8 @@
+<% executor = notification.executor %>
+<% reply = notification.notifiable %>
+
+
+<% if notification.notifiable_type == "Activity" %>
+  <span class="annotate">为你关注的课程： </span>
+  <%= course_name_tag(notification.notifiable.course_id) %>
+<% end %>

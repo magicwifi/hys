@@ -1,0 +1,218 @@
+<div class="content-wrapper">
+   
+        <div class="content w960 layout">
+            <div style="float:left;wdith:100%; display:block;">
+                <span class="fl">
+                    当前位置：
+                </span>
+                <ul class="fl">
+                    <li class="fl">
+                        <a class="fs14" href="/">
+                            华人医生
+                        </a>
+                        &nbsp;&gt;&nbsp;
+                    </li>
+                    <li class="fl">
+                        <a class="fs14" href="#">
+                            华人资讯
+                        </a>
+                        &nbsp;&gt;&nbsp;
+                    </li>
+                    <li class="fl" style="">
+                        <a class="fs14" href="#">
+                           <% if @infotype==1 %>
+                            医疗信息
+                           <% else %>
+                                <% if @infotype==2 %>
+                                   名医文章
+                                <% else %>
+                                   典型病例
+                                 <% end %>
+                           <% end %>
+                        </a>
+                        &nbsp;&gt;&nbsp;
+                    </li>
+                    <li class="fl">
+                        资讯详情
+                    </li>
+                </ul>
+            </div>
+            <div style="float:left;wdith:100%; display:block;">
+                <div class="main w960 fl mt10">
+                    <div class="panel">
+                        <div class="panel-body  pb8 bb">
+                            <div class="panel-info-title">
+                                <h1>
+                                        <a href="<%=@url %>" rel="nofollow" target="_blank">
+                                            <%=@title %>
+                                        </a>
+                                </h1>
+                                <p class="blue_1 tc mb10">
+                                    <span class="mr15">
+                                         <%=@aricle_date %>
+                                    </span>
+                                    <span class="mr15" style="display:none">
+                                        来源：
+                                        <a href="" rel="nofollow" target="_blank">
+                                            北京大学人民医院
+                                        </a>
+                                    </span>
+                                    <!-- 转载 -->
+                                    <span>
+                                        作者：<%=@author %>
+                                    </span>
+                                </p>
+                            </div>
+                              <% if @bshow %>
+                            <div class="panel-info-cont  ">
+                              <iframe src="<%=@url %>"  width="98%" height="600"></iframe>
+                            </div>
+                              <% end %>
+                        </div>
+                        <div class="layout panel-footer" style="display:none">
+                            <div style="float:left;width:48%;">
+                                <p class="fs12" style="line-height:30px;">
+                                    关注就医160微信服务号
+                                </p>
+                            </div>
+                            <div style="float:left;width:48%;">
+                                <p class="fs12" style="line-height:30px;">
+                                    下载就医160 APP
+                                </p>
+                            </div>
+                        </div>
+                        <div class="nextinfo" style="display:none">
+                            <p>
+                                前一篇：
+                                <a href="http://www.91160.com/health/detail/id-10343.html">
+                                    中南大学湘雅医院老年医学科治疗什么比较好?
+                                </a>
+                            </p>
+                            <p>
+                                后一篇：
+                                <a href="http://www.91160.com/health/detail/id-33.html">
+                                    北京社区医院与42家大医院实现预约转诊
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel" style="display:none">
+                        <div class="panel-head layout">
+                            <h4 class="panel-title fl">
+                                相关推荐
+                            </h4>
+                        </div>
+                        <div class="panel-body layout">
+                            <ul class="column column_2 layout well-list-info">
+                                <li class="column-grid ">
+                                    <a href="http://www.91160.com/health/detail/id-6004.html">
+                                        · 5000G流量免费送，每天签到每天送
+                                    </a>
+                                </li>
+                                <li class="column-grid column-grid_right">
+                                    <a href="http://www.91160.com/health/detail/id-7223.html">
+                                        · 重庆合道堂名医馆入驻就医160
+                                    </a>
+                                </li>
+                                <li class="column-grid ">
+                                    <a href="http://www.91160.com/health/detail/id-7348.html">
+                                        · 为什么看病这么难？
+                                    </a>
+                                </li>
+                                <li class="column-grid column-grid_right">
+                                    <a href="http://www.91160.com/health/detail/id-9529.html">
+                                        · 5000份礼品免费包邮送!签到就有
+                                    </a>
+                                </li>
+                                <li class="column-grid ">
+                                    <a href="http://www.91160.com/health/detail/id-9083.html">
+                                        · 高血压患者流鼻血警惕中风
+                                    </a>
+                                </li>
+                                <li class="column-grid column-grid_right">
+                                    <a href="http://www.91160.com/health/detail/id-8091.html">
+                                        · 就医160携手uber 39元专车红包免费送
+                                    </a>
+                                </li>
+                                <li class="column-grid ">
+                                    <a href="http://www.91160.com/health/detail/id-9310.html">
+                                        · 在家测血糖别用力挤压手指
+                                    </a>
+                                </li>
+                                <li class="column-grid column-grid_right">
+                                    <a href="http://www.91160.com/health/detail/id-9205.html">
+                                        · 养生花草茶的4大饮用误区
+                                    </a>
+                                </li>
+                                <li class="column-grid ">
+                                    <a href="http://www.91160.com/health/detail/id-10121.html">
+                                        · 中国最佳医院综合排行榜
+                                    </a>
+                                </li>
+                                <li class="column-grid column-grid_right">
+                                    <a href="http://www.91160.com/health/detail/id-10173.html">
+                                        · 让医生惊掉下巴的身体异物，太没节操了！（上）
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel mb0" style="display:none">
+                        <div class="panel-head layout">
+                            <h4 class="panel-title fl">
+                                网友评论
+                            </h4>
+                        </div>
+                        <div class="panel-body layout">
+                            <div class="allpost">
+                                <ul class="panel-list-post">
+                                    <li>
+                                        <div class="post-body">
+                                            暂无评论
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="user-post">
+                                    <div class="layout">
+                                        <input id="article_id" name="article_id" type="hidden" value="10344">
+                                        <img class="fl mr10" src="/info/user-img.jpg" width="50" height="50">
+                                        <p style="margin-top: 14px; ">
+                                            账号登陆：
+                                            <a href="javascript:;" class="h_login">
+                                                登录
+                                            </a>
+                                            或
+                                            <a href="http://www.91160.com/user/reg.html">
+                                                注册
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="mt8">
+                                        <textarea class="textarea" name="content" id="content" placeholder="说点什么吧。。。">                                        </textarea>
+                                    </div>
+                                    <p class="fs12 blue_1 layout mt8">
+                                        <span class="fr">
+                                            <!-- <label><input type="checkbox" name="weibo" id="weibo" value="1"/> 同步到微博</label> -->
+                                            <a href="javascript:;" class="btn btn_middle btn_blue_light" id="submit">
+                                                发&nbsp;表
+                                            </a>
+                                        </span>
+                                        网友评论仅供网友表达个人看法，并不表明就医160同意其观点或证实其描述
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end main-->
+                <div class="aside w290 fl mt10">
+                    
+                    
+                 
+                  
+                </div>
+                <!--end aside-->
+            </div>
+        </div>
+        <!--end content-->
+    </div>

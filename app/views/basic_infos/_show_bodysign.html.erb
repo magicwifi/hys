@@ -1,0 +1,70 @@
+ 
+<div class="single-form-container" style="margin-left: 50px;">
+  <div class="boxed-group" id="login">
+<div class="all_desc">
+    <div class="h3_desc">体征信息</div> 
+<div class="sick_desc">
+&nbsp;&nbsp;&nbsp;&nbsp;请填写本次看病的体征信息，以便医生诊断</div>
+</div>
+    <div class="boxed-group-inner">
+      <%= form_for body_sign, :url =>"/update_bodysign",:remote => true  do |f| %>
+        <%= f.hidden_field :id %>
+        <dl class="form">
+          <dt>
+          <%= f.label '体温' %>&nbsp;&nbsp;&nbsp;&nbsp;请输入体温（36-42）
+          </dt>
+          <dd>
+          <%= f.text_field  :temperature, :class => "short" %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '脉搏(次/分)' %>&nbsp;&nbsp;&nbsp;&nbsp;请输入每分钟脉搏跳动数
+          </dt>
+          <dd>
+          <%= f.text_field  :pulse, :class => "short" %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '高压(mmHg毫米汞柱)' %>&nbsp;&nbsp;&nbsp;&nbsp;请输入高压
+          </dt>
+          <dd>
+          <%= f.text_field  :high_pressure, :class => "short" %>
+	</dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '低压(mmHg毫米汞柱)' %>&nbsp;&nbsp;&nbsp;&nbsp;请输入低压
+          </dt>
+          <dd>
+          <%= f.text_field  :low_pressure, :class => "short" %>
+	</dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '双下肢是否肿胀' %>
+          </dt>
+          <dd>
+          <%= f.select(:swelling,options_for_select([['无肿胀', 'noswelling'],['有轻微肿胀', 'littleswe'],['肿胀较严重','worseswelling']], body_sign.swelling), {}, { :class => 'supershort'} ) %>  
+	</dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '其它体征(多选)' %>
+          </dt>
+          <dd>
+	 <% StatusSign.all.each do |ss| %>
+    <div>
+      <%= check_box_tag :status_sign_ids,ss.name,status_names.include?(ss.name),:name=>'status_sign_ids[]' %>
+      <%= label_tag t(ss.name) %>
+    </div>
+  <% end %>
+	</dd>
+        </dl>
+	<p style="height: 10px;" ></p>
+        <p> <%= f.submit '下一步', :class => "button primary" %> </p>
+      <% end %>
+    </div>
+  </div>
+</div>

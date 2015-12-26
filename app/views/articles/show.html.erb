@@ -1,0 +1,187 @@
+    <link type="text/css" rel="stylesheet" href="/info/style&f=global.css,infomation.css">
+    <link href="/info/ec_layout.css" rel="stylesheet" rev="stylesheet"
+    type="text/css" media="all">
+    <link href="/info/layout.css" rel="stylesheet" rev="stylesheet"
+    type="text/css" media="all">
+    <link href="/info/pic_layout.css" rel="stylesheet" rev="stylesheet"
+    type="text/css" media="all">
+  
+    <link href="/info/layout_box.css" rel="stylesheet" rev="stylesheet"
+    type="text/css" media="all">
+        <link href="/info/jiathis_share.css" rel="stylesheet" type="text/css">
+   <% if @type ==1 %>
+<%= render "shared/content_doc" %>
+     <% else %>
+<%= render "shared/content_doc" %>
+    <% end %>
+   
+   
+    <link type="text/css" rel="stylesheet" href="/info/style&f=artDialogSkin.css,login.css">
+    <!--login popup-->
+    <div id="_login_tipsid_" class="login-popupBg debated" style="display: none;">
+        <div class="login-popupWrapper debated">
+            <div class="login-popup">
+                <form action="http://user.91160.com/login.html" method="post">
+                    <span id="_dialogMsg">
+                    </span>
+                    <div class="mt48 userAccount loginInput">
+                        <label class="login-popup-left-item">
+                            账号
+                        </label>
+                        <input id="_nyusername" name="username" type="text" autocomplete="off"
+                        placeholder="请输入您的手机/身份证">
+                    </div>
+                    <div class="mt10 loginInput">
+                        <label class="login-popup-left-item">
+                            密码
+                        </label>
+                        <input id="_nypassword" name="password" type="password" maxlength="20"
+                        autocomplete="off" size="37">
+                    </div>
+                    <div class="mt10">
+                        <label class="login-popup-left-item">
+                            &nbsp;
+                        </label>
+                        <input type="hidden" value="http://www.91160.com/health/detail/id-10344.html"
+                        name="target" id="curip">
+                        <input type="submit" class="btn btn_login-popup" value="登录">
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+    </div>
+    <!--login popup-->
+    <script src="/info/jquery-1.9.1.min.js">
+    </script>
+    <script>
+        window.jQuery || document.write('<script src="http://webimg.91160.com/static/v4/common/jquery-1.9.1.min.js"><\/script>')
+    </script>
+    <link rel="stylesheet" href="/info/default.css">
+    <script type="text/javascript">
+        var _default_v4_path_ = "http://webimg.91160.com/static/v4";
+    </script>
+    
+   
+    <!-- 统计代码 -->
+    <script>
+        $(function() {
+            $('.tab').tab({
+                tabTrigger: '.tab-title',
+                activeStyle: 'is-tab-title_on',
+                event: 'click.tab'
+            });
+
+            $('#submit').click(function() {
+                var id = $('#article_id').val();
+                var no_name = $('input[name="no_name"]').attr('checked');
+                var content = $('#content').val();
+                if (!content || content == '说点什么吧。。') {
+                    _alert('请填写评论内容后再发表！', {
+                        title: '提示'
+                    });
+                    return false;
+                }
+                //ajax异步请求数据
+                $.getJSON("/health/comment/id-" + id + "/no_name-" + no_name + "/content-" + $('#content').val(),
+                function(e) {
+                    if (e.code == 1) {
+                        _alert(e.msg, {
+                            title: '提示'
+                        });
+                        location.replace(location.href);
+                    } else if (e.code == -99) {
+                        _alert(e.msg, {
+                            title: '提示',
+                            css: 'dialog_w340 tc'
+                        },
+                        function() {
+                            setTimeout("location.href = '" + e.link + "';", 1000);
+                        });
+                    } else {
+                        _alert(e.msg, {
+                            title: '提示'
+                        });
+                    }
+                });
+            });
+
+            $('.support').on('click',
+            function() {
+                var sid = $(this).attr('ectype');
+                var ojb = $(this);
+                $.getJSON("/health/supportCom/id-" + sid,
+                function(o) {
+                    if (o.code == 1) {
+                        var num = Number(ojb.children('span').html()) + 1;
+                        ojb.children('span').html(num);
+                    } else if (o.code == -99) {
+                        _alert(o.msg, {
+                            css: 'dialog_w340 tc'
+                        },
+                        function() {
+                            setTimeout("location.href = '" + o.link + "';", 1000);
+                        });
+                    } else {
+                        _alert(o.msg);
+                    }
+                });
+            });
+
+            $('.h_login').on('click',
+            function() {
+                $.getJSON("/health/taglogin",
+                function(j) {
+                    if (j.code == -99) {
+                        location.href = j.link;
+                    } else {
+                        _alert(j.msg);
+                        location.replace(location.href);
+                    }
+                });
+            });
+
+            $('.clickLike').on('click',
+            function() {
+                var clk_id = $(this).attr('ectype');
+                var obj = $(this);
+                var tmp = obj.children('span').text();
+                $.getJSON("/health/clickzan/id-" + clk_id,
+                function(cd) {
+                    if (cd.code == 1) {
+                        var num = Number(tmp) + 1;
+                        obj.children('span').html(num);
+                    } else {
+                        _alert(cd.msg);
+                    }
+                });
+            });
+
+        });
+
+        function AddFavorite() {
+            try {
+                window.external.addFavorite(document.URL, document.title);
+            } catch(e) {
+                try {
+                    window.sidebar.addPanel(document.title, document.URL, "");
+                } catch(e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+        $('.web_share').on('click',
+        function() {
+            var title = $(".web_share").attr("title");
+            var id = $('#article_id').val();
+            $.getJSON("/health/webShare", {
+                id: id,
+                title: title
+            },
+            function(rs) {
+                //分享数据统计，目前不需要返回数据
+                //if(rs.status == true) { //成功返回 } 
+            });
+        });
+    </script>

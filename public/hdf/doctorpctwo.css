@@ -1,0 +1,80 @@
+/*医生PC二期（二维码）新添加样式--20150828*/
+.doc_down_codeimg{
+    width: 729px;
+    height: 143px;
+    background: url(http://i1.hdfimg.com/apptransform/images/usercenter_download_app02.jpg) no-repeat center;
+    margin-left: -21px;
+    border-bottom: #fdcab4 1px solid;
+    position: relative;
+}
+.doc_down_codeimg .close{
+    background: url(http://i1.hdfimg.com/apptransform/images/doc_down_codeimg_close.png) no-repeat center;
+    width: 13px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+}
+.codeimg_bottom_right_top{
+    position: absolute;
+    top: -106px;
+    right: 1px;
+    z-index: 2;
+}
+.code_learn_img{
+    width: 980px;
+    padding-left: 215px;
+    padding-right: 5px;
+    text-align: center;
+    background: url(http://i1.hdfimg.com/apptransform/images/liuliangmianfei03.jpg) no-repeat;
+    height: 110px;
+    display: block;
+    color: #ffffff;
+    font-family: '黑体';
+    padding-top: 10px;
+}
+.code_learn_img:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+.code_learn_img h1{
+    font-size: 37px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 58px;
+}
+.code_article{
+    background: url(http://i1.hdfimg.com/apptransform/images/code_learn_yellowlogo.png) no-repeat 0 9px;
+    display: inline-block;
+    _zoom:1;
+    *display:inline;
+    font-size: 22px;
+    line-height: 33px;
+    padding-left: 24px;
+    margin-right: 40px;
+    text-align: left;
+}
+.code_learn_img .danhuang{
+    color: #fef82a;
+}
+.max9_font{
+    font-size:34px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+.favs,.dy{position:relative;font-size: 14px; color: #666!important;height£º24px;line-height:1; padding-left: 10px;font-family:"Î¢ÈíÑÅºÚ"!important;}
+.favs:hover,.dy:hover{color: #666!important; text-decoration: none!important;}
+.favs span{position: absolute;left: -12px;  width: 16px;height: 15px;background: url(http://i1.hdfimg.com/doctorzone/images/start.png) no-repeat center;top: 50%;margin-top: -8px;}
+.dy em{position: absolute;left: -12px; width: 15px;height: 15px; background: url(http://i1.hdfimg.com/doctorzone/images/puls.png) no-repeat center;top: 50%;margin-top: -8px;}
+.favs span.ok{ background: url(http://i1.hdfimg.com/doctorzone/images/starts.png) no-repeat center;}
+.dy em.ok{background: url(http://i1.hdfimg.com/doctorzone/images/pulss.png) no-repeat center;}
+

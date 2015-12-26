@@ -1,0 +1,74 @@
+<div class="pagehead clearfix">
+  <div class="container">
+    <ul class="pagehead-actions">
+      <% if owner?(@sick_case) %>
+        <li>
+          <%= link_to t('edit_course'), '/'+@sick_case.user.name+'/'+@sick_case.name+'/editcase', :class => "minibutton" %>
+        </li>
+      <% end %>
+    </ul>
+    <h1 class="pagehead-heading">
+      <div class="course-image" style="background-image: url(<%= @sick_case.poster_url %>);"></div>
+      <span class="author">
+        <%= link_to @sick_case.user.name, member_path(@sick_case.user.name), :class => "author" %>
+      </span>
+      <span class="pagehead-name-divider">/</span>
+      <strong><%= link_to @sick_case.title, '#' %></strong>
+    </h1>
+    <br>
+    <p class="course-desc"><%= auto_link @sick_case.description %></p>
+  </div>
+</div>
+<div class='container'>
+  <% if not @sick_hist %>
+    <h1><%= @sick_case.title %></h1>
+    <div class="alert">
+      <%= t('no_classes') %>
+      <% if owner?(@sick_case) %>
+          <%= link_to t('edit_course'), '/'+@sick_case.user.name+'/'+@sick_case.name+'/editcase', :class => "minibutton" %>
+         <%= link_to t('delete_this_course'), @sick_case, :confirm => t('confirm_delete'),
+          :method => :delete, :class => "minibutton" %>
+      <% end %>
+    </div>
+  <% else %>
+
+    <div class="tutorial-page">
+      <div class="tutorial-nav">
+        <%= render "play_list", :sick_case => @sick_case, :current_sick_hist => @sick_hist %>
+        <div class="course-update-time">
+          <i class="fa fa-clock-o"></i>
+          <span><%= t('update_time') %></span>
+          <span><%= link_to @sick_case.updated_at.strftime(t('date.formats.default')), '#' %></span>
+        </div>
+
+      </div>
+      <div class="tutorial-content">
+        <%= render "sick_hist_info", :sick_hist => @sick_hist %>
+        <% if @sick_case.open_to_user?(current_user) || @sick_case.open_to_user?(current_user) %>
+          <%= render "sick_hist_player", :sick_hist => @sick_hist %>
+        <% end %>
+        <div id="comments">
+          <h3><%= t("comment") %></h3>
+        </div>
+        <% if current_user %>
+          <%= render "comments/new_comment_form", :sick_hist => @sick_hist %>
+        <% else %>
+          <div id="login_buttons">
+            <%= link_to t("login_and_comment"), login_path(:return_to => request.url),
+              :class => "minibutton primary" %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% content_for :template_js do %>
+  <script>
+    $("textarea#comment_content").keydown(function(e) {
+      if ((e.ctrlKey||e.metaKey) && e.keyCode == 13) {
+        $("input[type=submit]").click();
+      }
+    });
+  </script>
+<% end %>

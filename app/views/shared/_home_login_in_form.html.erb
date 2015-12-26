@@ -1,0 +1,42 @@
+<div class="gdr_tab gdr_top">
+                                <h2>
+                                    <ul class="login_users">
+                                        <li><a href="javascript:void(0);" class="cur">用户登录</a></li>
+                                        <!--<li><a href="">医生登录</a></li>-->
+                                    </ul>
+                                </h2>
+                            </div>
+<div style="" id="_status_logout_">
+                                <ul>
+                                    <li class="user-min-info">
+                                        <h6 class="user-min-img"><img id="selfavatar" class="selfavatar" src="img/u_0.jpg"></h6>
+                                        <h4><span id="_ny_new_loginname"><%= current_user.name  %></span></h4>
+                                    </li>
+                                    <li class="user-min-btn" style="padding:20px 0px;">
+                                        <span class="fl"><a href="/<%= current_user.name  %>">健康中心</a></span>
+                                        <span class="login-out fr"><a  data-method="delete" class="" href="/logout">退出登录</a></span>
+                                    </li>
+                                    <li>
+                                        <div class="log_add" style="display:none">
+                                            <div class="log_add_con">
+                                                <ul>
+                                                    <li><a href="" class="def_a def_yu" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的预约</span>
+                                                        </a></li>
+                                                    <li><a href="" class="def_a def_zi" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的咨询</span>
+                                                        </a></li>
+                                                    <li><a href="" class="def_a def_gr" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的小组</span>
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+
+                            </div>

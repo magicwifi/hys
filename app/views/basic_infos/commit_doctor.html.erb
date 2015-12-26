@@ -1,0 +1,127 @@
+<div id="user-show" class="container clearfix">
+  <div id="user-course" >
+    <ul class="main-nav">
+      <li class="active" data-course-type="owned" id="owned-li" >
+        <a href="#owned-courses">1.病情表述</a>
+      </li>
+      <li data-course-type="watched" id="watched-li" >
+        <a href="#watched-courses">2.体征信息</a>
+      </li>
+      <li data-course-type="paid" id="paid-li" >
+        <a href="#paid-courses">3.检查资料上传</a>
+      </li>
+    </ul>
+    <div class="content owned-courses-section active clearfix">
+<div class="single-form-container" style="margin-left: 50px;">
+  <div class="boxed-group" id="login">
+<div class="all_desc">
+    <div class="h3_desc">病情表述</div> 
+<div class="sick_desc">
+&nbsp;&nbsp;&nbsp;&nbsp;请详细填写本次看病的信息，以便医生诊断</div>
+</div>
+    <div class="boxed-group-inner">
+      <%= form_for @basic_case, :url =>"/update_myfaq", :remote=>true do |f| %>
+        <%= f.hidden_field :id %>
+        <dl class="form">
+          <dt>
+          <%= f.label '主诉' %>&nbsp;&nbsp;&nbsp;&nbsp;<div class="msg-input">必填</div><div class="msg-text">&nbsp;&nbsp;包括主要症状、首次发作至今为止持续时间,限20-50字</div>
+          </dt>
+          <dd>
+          <%= f.text_area  :main_desc, :class => "short" %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '详细表述' %>&nbsp;&nbsp;&nbsp;&nbsp;<div class="msg-input">必填</div><div class="msg-text">&nbsp;&nbsp;包括主要症状，每次持续时间、多于什么情况下发作（活动）、怎么缓解（服药还是其他处理），其他伴随不适, 限500字</div>
+          </dt>
+          <dd>
+          <%= f.text_area  :detail_desc, :class => "short", :placeholder => "" %>
+          </dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '诊疗经过' %>&nbsp;&nbsp;&nbsp;&nbsp;去那些医院看过、诊断是什么，怎么治疗，效果怎么样
+          </dt>
+          <dd>
+          <%= f.text_area  :treat_desc, :class => "short", :placeholder => "" %>
+	</dd>
+        </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '目前情况' %>
+          </dt>
+          <dd>
+          <%= f.select(:now_desc, options_for_select([['有所好转', 'better'],['无明显变化', 'normal'],['持续加重','worse']], @basic_case.now_desc), {}, { :class => 'supershort'} ) %>  
+          </dd>
+        </dl>
+	<p style="height: 10px;" ></p>
+        <p> <%= f.submit '下一步', :class => "button primary" %> </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+    <div class="doctor-msg">温馨提示,您已经选中<%= @doctor.hospital %> <%= @doctor.name %>医生</div>
+
+    </div>
+    <div class="content paid-courses-section clearfix">
+<div class='container1'>
+  <div class="tutorial-page">
+    <div class="boxed-group">
+      <h3><i class="fa fa-plus fa-lg"></i> 检查资料列表</h3>
+      <div class="boxed-group-inner videos-section">
+        <div class="tutorial-nav added-videos-wrap">
+            <%= render "all_added_sick_assets", :basic_case=>@basic_case %>
+        </div><!-- end tutorial-nav -->
+        <div class="tutorial-content add-video-wrap">
+          <%= render "add_sick_asset", :basic_case=>@basic_case %>
+        </div>
+      </div>  <!-- boxed-group-inner -->
+    </div> <!-- boxed-group -->
+  </div><!-- end tutorial-page -->
+</div>
+    <div class="doctor-msg">温馨提示,您已经选中<%= @doctor.hospital %> <%= @doctor.name %>医生</div>
+<p>
+<p style="height:20px;"></p>
+    <div class="ready-basic-case">
+    <%= link_to '提交本次咨询', basic_case_new_path(@basic_case,@doctor.name,@commit_status), :method => :post, :class => "large button danger" %>
+</div>
+</p>
+
+    </div>
+    <div class="content watched-courses-section clearfix">
+          <%= render "show_bodysign", :body_sign=>@basic_case.body_sign,:status_names=>@status_names %>
+    <div class="doctor-msg">温馨提示,您已经选中<%= @doctor.hospital %> <%= @doctor.name %>医生</div>
+    </div>
+  </div><!--end user-course -->
+</div><!-- user-show -->
+<% content_for :template_js do %>
+  <script>
+    var menuItems = $(".main-nav li");
+    var contentItems = $(".content");
+
+    menuItems.on("click", function(event) {
+
+      menuItems.removeClass("active");
+      $(this).addClass("active");
+
+      contentItems.removeClass("active");
+
+      var type = $(this).data("course-type");
+
+      if (type == "owned") {
+        $(".owned-courses-section").addClass("active");
+      }else if (type == "paid") {
+        $(".paid-courses-section").addClass("active");
+      }else {
+        $(".watched-courses-section").addClass("active");
+      }
+    });
+
+    $(".edit_basic_case").submit(function( event ) {
+	  if($.trim($('#basic_case_main_desc').val()) == ''||$.trim($('#basic_case_detail_desc').val()) == '' ){
+      		alert('温馨提示：为了让医生更好解答您的咨询，请按提示输入主诉、详细描述等信息');
+		event.preventDefault();
+   	}	
+     });
+  </script>
+<% end %>

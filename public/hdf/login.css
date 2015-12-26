@@ -1,0 +1,42 @@
+@charset "gb2312";
+/*login开始*/
+.login { height:39px; min-width:1002px; width:100%; border-bottom:1px solid #ddd;}
+.login_main_box{  z-index:9999; width:100%; background:#f7f7f7; height:39px; border-bottom:1px solid #ddd;}
+.login_main { margin:0 auto; height:39px; background:#f7f7f7;}
+.logo { width:auto; height:auto; padding-top:12px;}
+.logo img { border:0;}
+.login_p { width:auto; height:auto; color:#333; font:12px/24px 'simsun',arial;}
+.login_p a { color:#768dac; text-decoration:none; padding:0 3px;}
+.login_p a:hover { color:#2670d5;}
+.login_p span { color:#ccc;}
+.login_r{ width:auto; height:40px;}
+.login_s{ padding-top:8px;}
+.unread_msg_cnt{ background:#e3001b; display:inline-block; *display:inline; *zoom:1; padding:0 3px; border-radius:4px; line-height:12px; color:#fff; position:absolute;left:10px; top:-8px;}
+.search_input { width:150px; height:22px; background:#fff; border:1px solid #ddd; color:#333; font:14px/22px 'microsoft yahei',arial; border-radius:2px 0 0 2px;}
+.btn_input { width:40px; height:24px; *margin-top:1px!important; background:url(../images/icon_search.png) center no-repeat #fff; border:1px solid #ddd ;*border:none; border-left:none; cursor:pointer; border-radius:0 2px 2px 0;}
+.btn_input:hover { background:url(../images/icon_search.png) center no-repeat #fff;}
+.login_link { width:auto; height:auto; font:12px/24px arial;}
+.login_link a { color:#768dac; text-decoration:none; padding:0 3px;}
+.login_link a:hover { color:#2670d5;}
+.login_link span { color:#ccc;}
+
+
+/*登录条小信封*/
+.bubble_msg_w{ position:absolute; top:25px; left:-123px; width:330px; z-index:999; border:3px solid #ccc; border:3px solid rgba(51, 51, 51, 0.3); border-radius:3px;}
+.bubble_msg{ padding:15px; background:#fff; width:300px; z-index:999;}
+.bubble_msg_w .bubble_msg span{ color:#333;}
+.bubble_msg_w .bubble_msg p{ color:#333;}
+.bubble_msg_w .bubble_msg .orange1{ color:#f40;}
+.bubble_msg_w .bubble_msg .site_letter li{ padding:5px 0; border-bottom:1px dashed #ddd; color:#333;}
+.bubble_msg_w .bubble_msg .bubble_next{ background:#36cb2b; color:#fff; border:1px solid #3bc131; padding:3px 8px; border-radius:2px;}
+.bubble_msg_w .bubble_msg .bubble_next:hover{ background:#36b12d; border:1px solid #2daa24; color:#fff; text-decoration:none;}
+.bubble_msg_w .bubble_msg .bubble_close{ background:#ddd; color:#333; padding:3px 8px; border-radius:2px; border:1px solid #ccc;}
+.bubble_msg_w .bubble_msg .bubble_close:hover{ background:#ccc; color:#333; text-decoration:none;}
+.bubble_msg_w .bubble_msg .bubble_close2{ display:block; background:url(../images/close_pop.png) no-repeat 10px 5px; position:absolute; top:5px; right:0; width:20px; height:20px; color:#999; padding:3px 5px; border-radius:3px;}
+.bubble_msg_w .bubble_msg .bubble_close2:hover{ background:url(../images/close_pop.png) no-repeat 6px -36px;}
+
+.bubble_msg .arrow{ background:url(../images/bubble_arrow.png) no-repeat; display:block; position:absolute; top:-7px; left:120px; width:25px; height:25px;}
+.bubble_msg_w .bubble_msg .site_letter li a{ color:#2670d5;}
+.bubble_msg_w .bubble_msg .site_letter li a:hover{ text-decoration:none; color:#666;}
+.login_p{ float:left;display:inline;}
+#login_bar_user_msg{display:inline;}

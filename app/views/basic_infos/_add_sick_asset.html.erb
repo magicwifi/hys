@@ -1,0 +1,99 @@
+<script>
+$(document).ready(function() {
+  var createVideoForm;
+  createVideoForm = $("form#create-video-uploader");
+  if (createVideoForm.length > 0) {
+    createVideoForm.QiniuUploader({
+      autoUpload: true,
+      removeProgressBarWhenCompleted: true,
+      onFilesAdd: function(file) {
+        types = /(\.|\/)(mov|mp4|jpg|png)$/i;
+        if (types.test(file.type) || types.test(file.name)) {
+          if (file.size > 100000000) {
+            alert("上传失败：" + file.name + " 检查资料太大，超过100M");
+            return false;
+          } else {
+            return true;
+          }
+        } else {
+          alert("上传失败：" + file.name + " 检查资料格式错误，请上传mov或mp4文件");
+          return false;
+        }
+      }
+    });
+    createVideoForm.bind("qiniu_upload_start", function(e) {
+      $('#submit_sick_asset_info').attr('value', '检查资料正在上传');
+      $('#submit_sick_asset_info').attr('disabled', 'true');
+      $('a.fileupload-btn').bind('click', false);
+    });
+    createVideoForm.bind("qiniu_upload_complete", function(e, data) {
+      $('#progress-text').html("检查资料上传成功！");
+      $('#video-filename').html("检查资料文件名： " + "<strong>" + data.fname + "</strong>");
+    });
+  }
+});
+</script>
+<div class="add-video-box clearfix">
+  <div class="primary-info">
+    <%= form_for(SickAsset.new,:remote => true) do |f| %>
+      <dl class="form">
+        <dt><%= f.label '检查资料标题' %>&nbsp;&nbsp;&nbsp;&nbsp;如：一次冠心病检查</dt>
+        <dd><%= f.text_field :title, id: "video-title"  %></dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label '选择检查资料类型' %></dt>
+        <dd>
+          <%= f.select(:asset_type, options_for_select([['影相科(CT)相关检查', 'CT'],['实验室相关检查', 'exper'],['心电图相关检查','heart']]), {}, { :class => 'supershort'} ) %>  
+        </dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label '上传检查资料(图片或WORD)' %></dt>
+      </dl>
+    <% end %>
+</div>
+	 <div class="secondary-info">
+    <p id="video-filename"></p>
+    <%= qiniu_video_uploader_form callback_url: sick_assets_path,
+      bucket:        "#{Settings.qiniu.bucket}",
+      id:            'create-video-uploader',
+      callback_method: 'POST',
+      custom_fields: { basic_case_id: basic_case.id, title:"", asset_type:"" },
+      progress_bar_id: 'progress-bar' do %>
+      <input id="fileupload" name="file" type="file" class="supershort"  > 
+      <div class="bar" id="progress-bar"></div>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        {%=o.name%}
+        <div class="progress">
+          <span id="progress-text">检查资料正在上传...</span>
+          <div class="bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </script>
+
+<div class="third-info">
+</div>
+      <div class="video-button-group">
+	<input class="button primary" data-disable-with="检查资料保存中..." disabled="disabled" id="submit_sick_asset_info" name="commit" type="submit" value="保存上述信息">
+      </div>
+ </div>
+</div>
+
+
+<% content_for :template_js do %>
+<script>
+$('#submit_sick_asset_info').click(function(){
+         $('#new_sick_asset').submit();
+});
+$('#video-title').on('change', function() {
+	var value = $('#video-title').val();
+	 $('#x\\:title').attr('value', value);
+});
+$('#sick_asset_asset_type').on('change', function() {
+	var value = $('#sick_asset_asset_type').val();
+	 $('#x\\:asset_type').attr('value', value);
+});
+</script>
+<% end %>

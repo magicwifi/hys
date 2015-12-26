@@ -1,0 +1,16 @@
+<div class="playlist-container">
+  <ul class="playlist">
+    <% sick_case.sick_hists.each do |v| %>
+      <li>
+      <a class="video <%= "active" if v.position == current_sick_hist.position %>" href="<%= '/'+sick_case.user.name+'/'+sick_case.name+'/'+ v.position.to_s+'/showcase'+'' %>">
+        <div class="video-icon">
+          <i class="fa fa-video-camera fa-lg"></i>
+        </div>
+        <span class="video-info">
+          <%= v.title %>
+        </span>
+      </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,208 @@
+	<link type="text/css" rel="stylesheet" href="./../160files/style&f=global.css,infomation.css">
+	<link href="./..//160files/ec_layout.css" rel="stylesheet" rev="stylesheet"
+	type="text/css" media="all">
+	<link href="./../160files/layout.css" rel="stylesheet" rev="stylesheet" type="text/css"
+	media="all">
+	<link href="./../160files/pic_layout.css" rel="stylesheet" rev="stylesheet"
+	type="text/css" media="all">
+	
+	<link href="./../160files/layout_box.css" rel="stylesheet" rev="stylesheet"
+	type="text/css" media="all">
+			<!-- logo 查询区域 -->
+			<div class="header w960 layout  header_no " id="headerWrap" style="display:none">
+				<div class="fl logo_info" style="display:none">
+					<div class="s_logo fl">
+						<a class="jiuyilogo" href="">
+							<img class="patch-png" alt="就医160" title="就医160" src="./新闻_files/logo.png">
+						</a>
+					</div>
+					<!-- 找医院、找科室 -->
+					<div class="s_title fl">
+						<span class="l_tit">
+							资讯
+						</span>
+					</div>
+				</div>
+				<div class="s_search fr">
+					<i class="g_icon g_sicon">
+					</i>
+					<input type="text" name="search_key" id="search_key" value="输入医院名称/医生姓名/科室名称"
+					class="search_input fl ac_input" placeholder="请输入您想搜索的医院、医生、或疾病名称" autocomplete="off"
+					placeholders="请输入您想搜索的医院、医生、或疾病名称">
+					<input type="hidden" id="serch_type" name="search_type" value="0">
+					<input type="submit" value="搜 索" id="btn_search" name="btnSearch" class="btn_border fl btn_search">
+					
+				</div>
+			</div>
+			<!-- 导航区域 -->
+			<div class="hd_wrap" style="padding-top:8px">
+				<div class="hd_wrap_con w960">
+					<div class="fl" style="background: #0090db;">
+						<ul>
+							
+							<li class="cur">
+								<a href="#">
+									医疗信息
+								</a>
+							</li>
+							<li class="">
+								<a href="/articles/medicalinfo?type=2">
+									名医文章
+								</a>
+							</li>
+							<li class="">
+								<a href="/articles/medicalinfo?type=3">
+									典型病例
+								</a>
+							</li>
+
+						</ul>
+					
+					</div>
+				</div>
+			</div>
+	<!--end header-->
+	<div class="content-wrapper">
+		<!--标签分组样式修改 updated-->
+		<div class="content_head" style="display:none">
+			标签（Tag）：
+			<a href="http://www.91160.com/health/alist/catid-3/tagid-all.html" style="color:red;">
+				全部(
+				<em>
+					3663
+				</em>
+				)
+			</a>
+		
+		
+		</div>
+		<div class="content w960 layout">
+			<div class="main w660 fl">
+				<div class="panel panel_main">
+					<ul class="panel-list-news">
+                             <% @docs.each do |doc| %>
+						<li>
+							<div class="layout">
+								<div class="imgBox fl">
+                                <a href="/articles/show?url=<%=doc["url"].gsub(/&/,'~')%>&author=<%=URI::escape(doc["author"])%>&title=<%=URI::escape(doc["title"])%>&infotype=1&aricle_date=<%=URI::escape(doc["aricle_date"])%>"  title="<%=doc["title"]%>" style="display:none">
+										<img src="./新闻_files/imgfile_22015121113364672086.jpg" alt="<%=doc["title"]%>"
+										width="80" height="80">
+									</a>
+								</div>
+								<div class="txtBox fl fs12">
+									<p class="mb10">
+										<a href="/articles/show?url=<%=doc["url"].gsub(/&/,'~')%>&author=<%=URI::escape(doc["author"])%>&title=<%=URI::escape(doc["title"])%>&infotype=1&aricle_date=<%=URI::escape(doc["aricle_date"])%>" title="<%=doc["title"]%>"
+										class="fs16">
+											<%=doc["title"]%>
+										</a>
+									</p>
+									<p>
+			<!--剖宫产：要想安全生产，就要敢动真家伙。-->
+                                <a href="/articles/show?url=<%=doc["url"].gsub(/&/,'~')%>&author=<%=URI::escape(doc["author"])%>&title=<%=URI::escape(doc["title"])%>&infotype=1&aricle_date=<%=URI::escape(doc["aricle_date"])%>">
+											<b>
+												详细&gt;&gt;
+											</b>
+										</a>
+									</p>
+								</div>
+							</div>
+						</li>
+						
+                              <% end %>
+						
+					
+					</ul>
+					<div class="pager tc mt16">
+						<p id="s_pager" class="page">
+							<!--共 <strong> 3321 </strong> 条记录&nbsp;-->
+							<strong>
+								1
+							</strong>
+							<a href="">
+								2
+							</a>
+							...
+							<a href="" class="n">
+								下一页
+							</a>
+							<a href="" class="n">
+								末页
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!--end main-->
+			<div class="aside w290 fl">
+				<div class="well" style="display:none">
+					<a href="http://www.91160.com/special/wechat.html" target="_blank">
+						<img src="./新闻_files/2014120323451463526.jpg" height="120" width="288"
+						alt="手机客户端">
+					</a>
+				</div>
+				<div class="well" style="display:none">
+					<div class="well-head">
+						<h4 class="well-title">
+							健康图库
+						</h4>
+					</div>
+					<div class="well-body" style="padding-bottom: 0;">
+						<ul class="well-list-img layout">
+							<li>
+								<a href="http://www.91160.com/health/show/id-10577.html" title="冬季美食养生">
+									<img src="./新闻_files/imgfile_22015121114124783628.jpg" height="92" width="118"
+									alt="冬季美食养生">
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="well mb0">
+					<div class="well-head">
+						<h4 class="well-title">
+							文章推荐
+						</h4>
+					</div>
+					<div class="well-body">
+						<ul class="well-list-info">
+							<li>
+								<a href="" title="英15岁女生因怀疑自己对wifi过敏自杀，其实是心病">
+									· 头发掉了一大把，到底是什么原因？
+								</a>
+							</li>
+						
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--end aside-->
+		</div>
+		<!--end content-->
+	</div>
+	
+	<link type="text/css" rel="stylesheet" href="./../160files/style&f=artDialogSkin.css,login.css">
+	<!--login popup-->
+	
+	<!--login popup-->
+	<script src="./../160files/jquery-1.9.1.min.js">
+	</script>
+	<script>
+		window.jQuery || document.write('<script src="http://webimg.91160.com/static/v4/common/jquery-1.9.1.min.js"><\/script>')
+	</script>
+	<link rel="stylesheet" href="./../160files/default.css">
+	<script type="text/javascript">
+		var _default_v4_path_ = "http://webimg.91160.com/static/v4";
+	</script>
+
+
+	<script>
+		$(function() {
+			$('.tab').tab({
+				tabTrigger: '.tab-title',
+				activeStyle: 'is-tab-title_on',
+				event: 'click.tab'
+			});
+		});
+	</script>

@@ -1,0 +1,125 @@
+<div class="content w1200 layout">
+                <div class="mb50 layout mt15">
+                    <div class="w900 fl gd_ban">
+                        <div class="gd_ban_con">
+                            <ul class="" id="gd_ban_ul" style="width: 7200px; left: -3600px;">
+                                                                                                <li><a href="http://www.91160.com/health/detail/id-9011.html"><img src="img/2015092114130465629.jpg" alt=""></a></li>
+                                                                <li><a href="http://www.91160.com/health/detail/id-9200.html"><img src="img/2015092910360993245.jpg" alt=""></a></li>
+                                                                <li><a href="http://www.91160.com/company/personal.html"><img src="img/2015032515252127283.jpg" alt=""></a></li>
+                                                                <li><a href="http://hk.91160.com/"><img src="img/2015062417481255748.jpg" alt=""></a></li>
+                                                                <li><a href="http://www.91160.com/health/examination.html"><img src="img/2015082415054113465.jpg" alt=""></a></li>
+                                                                <li><a href="http://www.91160.com/health/alzheimer.html"><img src="img/2015092409343635371.jpg" alt=""></a></li>
+                                                                                                <!-- 
+                                <li><span class="fs24">2>li</span></li> -->
+                            <li><a href="http://www.91160.com/health/detail/id-9011.html"><img src="./160_files/2015092114130465629.jpg" alt=""></a></li><li><a href="http://www.91160.com/health/detail/id-9011.html"><img src="img/2015092114130465629.jpg" alt=""></a></li></ul>
+
+                        </div>
+                        <div class="gd_ban_g">
+                            <i id="hrefImg" class="gd_ban_left gd_ban_dir"></i>
+                            <i id="nextImg" class="gd_ban_right  gd_ban_dir"></i>
+                        </div>
+                        <div class="gdb_top">
+                            <div class="gdb_top_back"></div>
+                            
+
+                        </div>
+                    </div>
+                    <div class="w280 fr ">
+                        <div class="gdr_sec log_gdr">
+                            <div class="gdr_tab gdr_top">
+                                <h2>
+                                    <ul class="login_users">
+                                        <li><a href="javascript:void(0);" class="cur">用户登录</a></li>
+                                        <!--<li><a href="">医生登录</a></li>-->
+                                    </ul>
+                                </h2>
+                            </div>
+                            <div id="_status_login_" class="login_r">
+                            <form action="http://user.91160.com/login.html" method="post" id="loginFrom" class="form">
+                                <ul>
+                                    <li> <em>账号：</em><div class="input_div"><input type="text" name="username" id="_nynewusername" class="input_t" placeholder="手机/邮箱/身份证" placeholders="手机/邮箱/身份证"></div></li>
+                                    <li> <em>密码：</em><div class="input_div"><input type="password" name="password" id="_nynewpassword" class="input_t" placeholder="请输入您的密码"></div>
+                                        <div class="check_l">
+                                            <input type="checkbox" value="1" class="input_c" name="autoLogin" id="lo_nexr"> 
+                                                <i class="own_check g_icon"></i>
+                                                <span class="fs12 tips">下次自动登录</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="">
+                                    <input type="hidden" value="" id="saltvl">
+                                    <input type="hidden" value="" id="curip">
+                <input type="hidden" value="http://www.91160.com/" name="target" id="curip">
+                                    <input type="submit" class="input_b" id="" value="登  录">
+                                </div>
+                                </form>
+                                <div class="gdr_done">
+                                    <ul>              
+                                        <li><a href="http://user.91160.com/user/activate.html">账号激活</a></li>
+                                        <li><a href="http://user.91160.com/find.html">忘记密码</a></li>
+                                        <li><a href="http://user.91160.com/register.html">注册</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mt20 th_l">
+                                    
+                                </div>
+                                <div class="erw_i ">
+                                    <i id="codeLogin_btn" class="g_icon tri_r "></i>
+
+                                    <div class="erw_show">
+                                        <h3 class="">
+                                            请用手机微信“扫一扫”功能 <br>
+                                            扫描下面二维码验证登陆
+                                        </h3>
+                                        <div class="erweiImg" id="u_erw">
+                                            <img id="scanimg" src="" alt="">
+                                                <div class="erm_tips_div" id="erm_tips" style="display: none;">
+                                                    <span class="erm_tips"></span>
+                                                </div>
+                                        </div>
+                                        <i class="g_icon tri_rc"></i>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:none" id="_status_logout_">
+                                <ul>
+                                    <li class="user-min-info">
+                                        <h6 class="user-min-img"><img id="selfavatar" class="selfavatar"></h6>
+                                        <h4><span id="_ny_new_loginname"></span></h4>
+                                        <span class="edit-btn"><a href="http://user.91160.com/account.html">编辑资料</a></span><span class="pass-word"><a href="http://user.91160.com/account/security.html">修改密码</a></span>
+                                    </li>
+                                    <li class="user-min-btn" style="padding:20px 0px;">
+                                        <span class="fl"><a href="http://user.91160.com/order.html">用户中心</a></span>
+                                        <span class="login-out fr"><a class="" href="http://user.91160.com/logout.html?target=http://www.91160.com/">退出登录</a></span>
+                                    </li>
+                                    <li>
+                                        <div class="log_add">
+                                            <div class="log_add_con">
+                                                <ul>
+                                                    <li><a href="http://user.91160.com/order.html" class="def_a def_yu" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的预约</span>
+                                                        </a></li>
+                                                    <li><a href="http://user.91160.com/consult.html" class="def_a def_zi" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的咨询</span>
+                                                        </a></li>
+                                                    <li><a href="http://www.91160.com/mygroup/index.html" class="def_a def_gr" target="_blank;">
+                                                            <i></i>
+                                                            <span class="">我的小组</span>
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+

@@ -1,0 +1,133 @@
+<script>
+$(document).ready(function() {
+  var createVideoForm;
+  createVideoForm = $("form#create-video-uploader");
+  if (createVideoForm.length > 0) {
+    createVideoForm.QiniuUploader({
+      autoUpload: true,
+      removeProgressBarWhenCompleted: true,
+      onFilesAdd: function(file) {
+        types = /(\.|\/)(docx|doc|mov|mp4|jpg|png)$/i;
+        if (types.test(file.type) || types.test(file.name)) {
+          if (file.size > 100000000) {
+            alert("上传失败：" + file.name + " 附件太大，超过100M");
+            return false;
+          } else {
+            return true;
+          }
+        } else {
+          alert("上传失败：" + file.name + " 附件格式错误，请上传mov或mp4文件");
+          return false;
+        }
+      }
+    });
+    createVideoForm.bind("qiniu_upload_start", function(e) {
+      $('#submit_operation_info').attr('value', '附件正在上传');
+      $('#submit_operation_info').attr('disabled', 'true');
+      $('a.fileupload-btn').bind('click', false);
+    });
+    createVideoForm.bind("qiniu_upload_complete", function(e, data) {
+      $('#progress-text').html("附件上传成功！");
+      $('#video-filename').html("附件文件名： " + "<strong>" + data.fname + "</strong>");
+    });
+  }
+});
+</script>
+<div class="add-video-box clearfix">
+  <div class="primary-info">
+    <%= form_for(Operation.new,:remote => true) do |f| %>
+      <dl class="form">
+        <dt><%= f.label '手术/外伤名称' %> &nbsp;&nbsp;&nbsp;&nbsp;如:一次XX手术 </dt>
+        <dd><%= f.text_field :title, id: "video-title" %></dd>
+      </dl>
+      <dl class="form">
+        <dt><%= f.label '本次手术简要描述' %></dt>
+        <dd>
+          <%= f.text_area :desc, id: "video-desc", class: "long short", rows: '8' %>
+        </dd>
+      </dl>
+        <dl class="form">
+          <dt>
+          <%= f.label '手术/外伤日期' %>
+          </dt>
+          <dd>
+          <%= f.text_field  :sick_date, :class =>"supershort", :id=>"datepicker"   %>
+          </dd>
+        </dl>
+      <dl class="form">
+        <dt><%= f.label '上传本次手术病历资料(图片或WORD)' %></dt>
+      </dl>
+    <% end %>
+</div>
+	 <div class="secondary-info">
+    <p id="video-filename"></p>
+    <%= qiniu_video_uploader_form callback_url: operations_path,
+      bucket:        "#{Settings.qiniu.bucket}",
+      id:            'create-video-uploader',
+      callback_method: 'POST',
+      custom_fields: { user_id: user.id, title:"", desc:"",sick_date:"" },
+      progress_bar_id: 'progress-bar' do %>
+
+        <input id="fileupload" name="file" type="file">
+      <div class="bar" id="progress-bar"></div>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        {%=o.name%}
+        <div class="progress">
+          <span id="progress-text">附件正在上传...</span>
+          <div class="bar" style="width: 0%"></div>
+        </div>
+      </div>
+    </script>
+<div class="third-info"></div>
+      <div class="video-button-group">
+	<input class="button primary" data-disable-with="保存中..."  id="submit_operation_info" name="commit" type="submit" value="保存上述信息">
+      </div>
+ </div>
+ </div>
+</div>
+<% content_for :template_js do %>
+  <script>
+$(document).ready(function(){
+
+	var i18n = { // 本地化
+		previousMonth	: '上个月',
+		nextMonth		: '下个月',
+		months			: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+		weekdays		: ['周日','周一','周二','周三','周四','周五','周六'],
+		weekdaysShort	: ['日','一','二','三','四','五','六']
+	}
+
+	var datepicker = new Pikaday({ 
+		field:		jQuery('#datepicker')[0],  
+		minDate:	new Date('1980-01-01'), 
+		maxDate:	new Date('2020-12-31'), 
+		yearRange:	[1980,2020],
+		i18n: 		i18n,
+		onSelect: 	function() {
+			var date = document.createTextNode(this.getMoment().format('YYYY-MM-DD') + ' '); //生成的时间格式化成 2013-09-25
+			$('#datepicker').append(date);
+		}
+	});
+
+});
+
+$('input#submit_operation_info').click(function(){
+         $('form#new_operation').submit();
+});
+$('#video-title').on('change', function() {
+	var value = $('#video-title').val();
+	 $('#x\\:title').attr('value', value);
+});
+$('#video-desc').on('change', function() {
+	var value = $('#video-desc').val();
+	 $('#x\\:desc').attr('value', value);
+});
+$('#datepicker').on('change', function() {
+	var value = $('#datepicker').val();
+	 $('#x\\:sick_date').attr('value', value);
+});
+</script>
+<% end %>

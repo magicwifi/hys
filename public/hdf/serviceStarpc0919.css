@@ -1,0 +1,467 @@
+/*PC端医生排名页面0919添加--于潇川*/
+.personweb-btn{
+  width: 62px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 11px;
+  background-color: #ffaa09;
+  border-radius: 2px;
+  line-height: 21px;
+  margin-left: 3px;
+  vertical-align: 3px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  text-decoration: none;
+}
+.personweb-sickness-btn{
+  width: 62px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 11px;
+  background-color: #ffaa09;
+  border-radius: 2px;
+  line-height: 21px;
+  margin-left: -2px;
+  margin-top: 2px;
+  vertical-align: 3px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  text-decoration: none;
+}
+.doctor_score_thumb{
+  width: 73px;
+  height: 13px;
+  background: url("../images/doctor-rank-score-gray.png") no-repeat;
+  vertical-align: -3px;
+  margin-left: 6px;
+  margin-right: 6px;
+  text-align: left;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_score_thumb_disease{
+  width: 73px;
+  height: 13px;
+  text-align: left;
+  background: url("../images/doctor-rank-score-gray.png") no-repeat;
+  vertical-align: -5px;
+  margin-right: 6px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_score_thumb_disease_info{
+  width: 84px;
+  height: 15px;
+  text-align: left;
+  background: url("../images/doctor-rank-score-gray-big.png") no-repeat;
+  vertical-align: -4px;
+  margin-right: 6px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_score_thumb_blue{
+  height: 13px;
+  background:url("../images/doctor-rank-score-blue.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_score_thumb_red{
+  height: 13px;
+  background: url("../images/doctor-rank-score-red.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_score_thumb_red_big{
+  height: 15px;
+  background: url("../images/doctor-rank-score-red-big.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.patient_recommend .blue{
+  font-style: normal;
+  color: #71bdff;
+  font-weight: bold;
+  margin-left: 3px;
+}
+.blue_i{
+  font-style: normal;
+  color: #71bdff;
+  font-weight: bold;
+  margin-left: 3px;
+}
+.patient_recommend .bigblue{
+  font-style: normal;
+  color: #71bdff;
+  font-weight: bold;
+  margin-left: 3px;
+  font-size: 13px;
+  vertical-align: -2px;
+}
+.patient_recommend .red{
+  font-style: normal;
+  color: #ff7373;
+  font-weight: bold;
+  margin-left: 3px;
+}
+.patient_recommend .bigred{
+  font-style: normal;
+  color: #ff7373;
+  font-weight: bold;
+  margin-left: 3px;
+  font-size: 13px;
+  vertical-align: -2px;
+}
+.patient_recommend .bigredinfo{
+  font-style: normal;
+  color: #ff7373;
+  font-weight: bold;
+  margin-left: 3px;
+  font-size: 13px;
+}
+.doctor_photo_serviceStar{
+  float: left;
+  padding: 0 10px;
+  position: relative;
+  width: 545px;
+}
+.doctor_photo_serviceStar_recommend{
+  float: left;
+  padding: 0 10px;
+  position: relative;
+  width: 590px;
+}
+.doctor_photo_medal{
+  border-right: 1px dashed #ddd;
+  float: left;
+  padding: 0 5px;
+  width: 145px;
+  min-height: 80px;
+}
+.hp_doc_box_serviceStar{
+  background: #fafafa none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  float: left;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  width: 851px;
+}
+.va_center{
+  vertical-align: middle !important;
+}
+
+#doc_list_index .tdnew_a{
+  width: 117px;
+  padding: 5px 0 5px 0;
+}
+#doc_list_index .tdnew_a li {
+  background: transparent url("http://i1.hdfimg.com/v2/images/h_hf/icon_doctor.gif") no-repeat scroll 0 4px;
+  float: left;
+  list-style: outside none none;
+  padding-left: 18px;
+}
+#doc_list_index .tdnew_a .name{
+  color: #098bce;
+  font-size: 14px;
+}
+
+#doc_list_index .tdnew_b{
+  padding: 5px 0 5px 40px;
+  width: 150px;
+  text-align: left;
+}
+#doc_list_index .tdnew_b p{
+  line-height: 17px;
+}
+#doc_list_index .tdnew_b p a{
+  color: #098bce;
+  text-decoration: underline;
+}
+#doc_list_index .tdnew_c{
+  padding: 10px 0 5px 5px;
+  width: 170px;
+}
+#doc_list_index .tdnew_d{
+  padding: 5px 0 5px 10px;
+  width: 55px;
+}
+#doc_list_index_head{
+  width: 100%;
+  text-align: left;
+}
+#doc_list_index_head .tdnew{
+  background: rgba(0, 0, 0, 0) url("http://i1.hdfimg.com/v2/images/h_hf/boxb_02.gif") repeat-x scroll 0 0;
+  border: medium none;
+  color: #999;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 5px;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+.table_td_pl5px{
+  padding-left: 5px !important;
+}
+.blue_a{
+  color: #098bce;
+  text-decoration: underline;
+}
+.blue_a_noun{
+  color: #098bce;
+  text-decoration: none;
+}
+.blue_a_noun1{
+  color: #098bce;
+  text-decoration: none;
+}
+.blue_a_noun1:hover{
+  color: #098bce;
+  text-decoration: none;
+}
+.good_doctor_list_td{
+  padding: 10px 0 5px 0;
+}
+.lb_line_new{
+  background-image: url("http://i1.hdfimg.com/images/common/dotline.gif");
+  background-repeat: repeat-x;
+  height: 1px;
+}
+.text_cor_5c{
+  color: #5c5c5c;
+}
+.text_mar_r{
+  margin-right: 14px;
+}
+.doctor_star_new{
+  position: relative;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  font-size: 0;
+}
+
+.doctor_star_disease{
+  width: 19px;
+  height: 19px;
+  text-align: left;
+  background: url("http://i1.hdfimg.com/doctorzone/images/fuwu_star_yxc_gray.png") no-repeat;
+  vertical-align: -8px;
+  margin-right: 6px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+  font-size: 0;
+}
+.doctor_star_new .graynum{
+  min-width: 170px;
+  line-height: 13px;
+  font-size: 10px;
+  color: #ffffff;
+  border-radius: 3px;
+  background: url("http://i1.hdfimg.com/doctorzone/images/graynum-back.png") repeat;
+  padding: 5px;
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: -20px;
+}
+.doctor_star_yellow{
+  height: 19px;
+  width: 19px;
+  background: url("http://i1.hdfimg.com/doctorzone/images/fuwu_star_yxc_yellow.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_star_yellow_zero{
+  height: 19px;
+  width: 0;
+  background: url("http://i1.hdfimg.com/doctorzone/images/fuwu_star_yxc_yellow.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_star_yellow_half{
+  height: 19px;
+  width: 10px;
+  background: url("http://i1.hdfimg.com/doctorzone/images/fuwu_star_yxc_yellow.png") no-repeat;
+  vertical-align: 2px;
+  display: inline-block;
+  *display:inline;
+  *zoom:1;
+}
+.doctor_star_score{
+    line-height: 20px;
+    padding-right: 10px;
+    float: right;
+}
+.doctor_thanks_letter{
+  background: #f60 none repeat scroll 0 0;
+  color: #fff;
+  font: 400 12px/1.5 Arial,simsun;
+  padding: 2px 5px;
+  text-decoration: none;
+}
+.doctor_text_center{
+  text-align: center;
+}
+.doctor_text_right{
+  text-align: right;
+}
+.tuijian_big{
+  font-size: 14px;
+}
+.patient_recommend_list{
+  padding-left: 90px;
+  padding-top: 15px;
+  padding-bottom: 12px;
+}
+.patient_recommend_list p{
+  line-height: 20px;
+  color: #5c5c5c;
+}
+.patient_recommend_more{
+  font-size: 12px;
+  font-weight: 400 !important;
+}
+
+
+/*服务之星0921yxc*/
+.star_top5_newstar{
+  width: 535px;
+  padding: 15px 20px 0 25px;
+}
+.star_top5_newstar .star_list{
+  padding: 15px;
+}
+.lt_new {
+  background: #ffffff url("../images/panelB_blue06_new.gif") repeat-y scroll left center;
+  width: 580px;
+}
+
+.doctor_new_headimg li{
+  float: left;
+  width: 178px;
+  margin-bottom: 20px;
+}
+
+.mr60{
+  text-align: left;
+}
+
+.doctor_new_headimg .fl{
+  display: block;
+  float: left;
+}
+.doctor_new_headimg .fr{
+  display: block;
+  float: left;
+}
+.doctor_new_headimg .name{
+  font-size: 14px;
+  color: #0099cc;
+  font-weight: bold;
+}
+.clear{
+  clear: both;
+}
+
+/*服务之星0921yxc*/
+.star_top5_newstar2{
+  width: 570px;
+  padding: 30px 20px 15px 45px;
+}
+.doctor_new_headimg2 li{
+  float: left;
+  width: 190px;
+  margin-bottom: 20px;
+}
+
+.doctor_new_headimg2 .fl{
+  display: block;
+  float: left;
+}
+.doctor_new_headimg2 .fr{
+  display: block;
+  float: left;
+}
+.doctor_new_headimg2 .name{
+  font-size: 14px;
+  color: #0099cc;
+  font-weight: bold;
+}
+/*消除原有padding*/
+.padding_0{
+  padding: 0 !important;
+}
+.good_doctor_list_td_qq{
+  padding: 6px 0 5px 0 !important;
+}
+.good_doctor_list_td_qq p{
+  line-height: 15px;
+  color: #999999;
+}
+
+/*不破坏原有布局，增加高度10*/
+.heigth_5{
+  height: 5px;
+}
+.cor_9{
+  color: #999999;
+}
+.kbjy_tabbox .near2{
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+#tabmainin_gray a{
+  background: #f9f9f9 none repeat scroll 0 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  color: #7f7f7f;
+  display: inline-block;
+  font-size: 13px;
+  height: 26px;
+  line-height: 26px;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.grayborder{
+  border: 1px solid #dfdfdf;
+  margin-right: 12px;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  vertical-align: middle;
+}
+.grayborder i{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  *display:inline;
+  *zoom:1;
+}
+
+
+
+
+
+

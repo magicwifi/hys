@@ -1,0 +1,37 @@
+  <%= render "shared/home_masthead" %>
+<%= render "shared/tag_cloud" %>
+<%= render "shared/marketing" %>
+<div class="container">
+  <div id="member-page" class="clearfix">
+    <div class="title">
+      <%= t 'member_count' %> <%= @count %>
+    </div>
+    <% if @users.blank? %>
+      <%= t 'no_user_found' %>
+    <% else %>
+      <%= render :partial => "shared/member_list", :locals => {:members => @users} %>
+    <% end %>
+  </div>
+  <%= paginate @users, :window => 2 %>
+</div>
+
+<link type="text/css" rel="stylesheet" href="css/style&f=global.css,global_icon_v4.css,default.css">
+<script type="text/javascript" charset="utf-8" src="js/c.js"></script>
+<link href="css/ec_layout.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all">
+<link href="css/layout.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all">
+<link href="css/pic_layout.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all">
+<script type="text/javascript" charset="utf-8" src="js/f.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/p.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/d.js"></script>
+<link href="css/layout_box.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all">
+<link type="text/css" rel="stylesheet" href="css/style&f=artDialogSkin.css,login.css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://webimg.91160.com/static/v4/common/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/common.js"></script>
+<script src="js/nykj.js"></script>
+<script src="js/jquery.tab.js"></script>
+<link rel="stylesheet" href="css/default.css">
+<script src="js/artDialog.js"></script>
+<script type="text/javascript" src="js/common_7.23a.js"></script>                                     
+  
+<script type="text/javascript" src="js/default.js"></script>
